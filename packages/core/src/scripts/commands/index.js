@@ -2,6 +2,8 @@ import { basicMarks } from '~/components/marks';
 import { basicNodes } from '~/components/nodes'
 import { hasBlock } from '~/utils/utils';
 
+import image from './image';
+
 function marks() {
   return Object.keys(basicMarks)
     .reduce((commands, type) => {
@@ -40,7 +42,10 @@ function list() {
 const commands = {
   ...marks(),
   ...blocks(),
-  ...list()
+  ...list(),
+  undo: (editor) => editor.undo(),
+  redo: (editor) => editor.redo(),
+  'image-local': () => document.querySelector('#re-editor-image-input').click()
 };
 
 export default function (editor) {

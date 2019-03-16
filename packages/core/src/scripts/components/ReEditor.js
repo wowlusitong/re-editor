@@ -5,6 +5,7 @@ import { Editor } from 'slate-react';
 import nodes from '~/components/nodes';
 import marks from '~/components/marks';
 import { initialValue } from '~/utils/utils';
+import ImageUploader from '~/components/utils/ImageUploader';
 
 export default class ReEditor extends React.Component {
   constructor(props) {
@@ -20,6 +21,15 @@ export default class ReEditor extends React.Component {
     const { onChange, autoFocus } = this.props;
     this.setState({ value });
     onChange(value);
+  }
+
+  handleInsertImage = (image) => {
+    this.editor.current.insertBlock({
+      type: 'Image',
+      isVoid: true,
+      data: { src: image }
+    })
+    .insertBlock('paragraph')
   }
 
   renderMark = (props, editor, next) => {
@@ -51,16 +61,19 @@ export default class ReEditor extends React.Component {
     const { value } = this.state;
 
     return (
-      <Editor
-        value={value}
-        onChange={this.handleChange}
-        renderMark={this.renderMark}
-        renderNode={this.renderNode}
-        ref={this.editor}
-        autoFocus={autoFocus}
-        placeholder={placeholder}
-        className={className}
-      />
+      <>
+        <Editor
+          value={value}
+          onChange={this.handleChange}
+          renderMark={this.renderMark}
+          renderNode={this.renderNode}
+          ref={this.editor}
+          autoFocus={autoFocus}
+          placeholder={placeholder}
+          className={className}
+        />
+        <ImageUploader insertImage={this.handleInsertImage} />
+      </>
     )
   }
 }

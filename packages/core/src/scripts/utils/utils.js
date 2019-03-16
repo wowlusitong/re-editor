@@ -48,3 +48,7 @@ export function isActive(value, type) {
 export function toValue(value) {
   return Value.fromJSON(value)
 }
+
+export function setData(editor, node, changeData) {
+  editor.setNodeByKey(node.key, { data: changeData(node.data) })
+}

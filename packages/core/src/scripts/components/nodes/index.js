@@ -1,4 +1,5 @@
 import { generateElementComponents } from '~/utils/utils';
+import Image from './Image';
 
 export const basicNodes = {
   paragraph: { name: 'div' },
@@ -45,5 +46,6 @@ const list = {
 }
 
 export default {
+  Image,
   ...generateElementComponents({...basicNodes, ...list})
 };

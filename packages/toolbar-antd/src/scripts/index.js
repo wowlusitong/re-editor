@@ -5,6 +5,7 @@ import { command } from '@re-editor/core';
 import Button from '~/components/Button';
 import Icon from '~/components/Icon';
 import Context from '~/components/Context';
+import ImageButton from '~/components/ImageButton';
 
 import "antd/dist/antd.css";
 
@@ -51,6 +52,16 @@ export default class Toolbar extends React.Component {
               <Tooltip title="两端对齐"><Icon type="icon-menu" /></Tooltip>
             </Select.Option>
           </Select>
+          <Button.Group>
+            <ImageButton />
+            <Button type="link" title="超链接" />
+            <Button type="qrcode" title="二维码" />
+            <Button type="table" title="表格" />
+          </Button.Group>
+          <Button.Group>
+            <Button type="undo" title="撤销" />
+            <Button type="redo" title="重做" />
+          </Button.Group>
         </div>
       </Context.Provider>
     )
