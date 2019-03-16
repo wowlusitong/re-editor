@@ -10,15 +10,15 @@
     "dev:babel": "npm run compile:babel -- --watch",
     "dev:css": "npm run compile:css -- --watch",
     "clear": "rm -rf lib",
-    "build": "npm-run-all clear compile:babel compile:css",
+    "build": "npm-run-all clear compile:babel",
     "start": "npm-run-all -p dev:babel"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@re-editor/core": "^1.0.0",
-    "@re-editor/toolbar-antd": "^1.0.0"
+    "@re-editor/core": "^0.0.1",
+    "@re-editor/toolbar-antd": "^0.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

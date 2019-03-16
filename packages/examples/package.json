@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack --mode=production"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +22,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "re-editor": "^1.0.0",
+    "re-editor": "^0.0.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   }
