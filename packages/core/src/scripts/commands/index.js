@@ -45,11 +45,12 @@ const commands = {
   ...list(),
   undo: (editor) => editor.undo(),
   redo: (editor) => editor.redo(),
+  image,
   'image-local': () => document.querySelector('#re-editor-image-input').click()
 };
 
 export default function (editor) {
-  return (type) => {
-    commands[type](editor);
+  return (type, ...rest) => {
+    commands[type](editor, ...rest);
   }
 }

@@ -21,7 +21,7 @@ export default class Button extends React.Component {
   }
 
   render() {
-    const { type, title } = this.props;
+    const { type, title, icon } = this.props;
 
     return (
       <Tooltip title={title || type}>
@@ -30,7 +30,7 @@ export default class Button extends React.Component {
           onMouseDown={this.handleMouseDown}
           type={this.isActive() ? 'primary' : ''}
           >
-          <Icon type={`icon-${type}`} />
+          <Icon type={`icon-${icon || type}`} />
         </AntButton>
       </Tooltip>
     )

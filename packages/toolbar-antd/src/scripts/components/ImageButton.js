@@ -13,20 +13,10 @@ export default class ImageButton extends React.Component {
 
   renderMenu = () => {
     return (
-      <Menu onClick={this.handleClick}>
+      <Menu onMouseDown={this.handleClick}>
         <Menu.Item key="image-local">
-          <Tooltip placement="right" title="插入本地图片">
+          <Tooltip placement="right" title="插入本地图片（支持快捷键粘贴）">
             本地图片
-          </Tooltip>
-        </Menu.Item>
-        <Menu.Item key="image-url">
-          <Tooltip placement="right" title="输入图片网络地址">
-            网络图片
-          </Tooltip>
-        </Menu.Item>
-        <Menu.Item key="image-copy">
-          <Tooltip placement="right" title="从剪贴板复制图片(ctrl + v)">
-            复制图片
           </Tooltip>
         </Menu.Item>
       </Menu>

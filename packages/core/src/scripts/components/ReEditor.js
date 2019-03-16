@@ -1,11 +1,13 @@
 import React from 'react';
 import { Value } from 'slate';
-import { Editor } from 'slate-react';
+import { Editor, getEventTransfer } from 'slate-react';
 
 import nodes from '~/components/nodes';
 import marks from '~/components/marks';
 import { initialValue } from '~/utils/utils';
 import ImageUploader from '~/components/utils/ImageUploader';
+import paster, { getPasteType } from '~/events/paste';
+import command from '~/commands';
 
 export default class ReEditor extends React.Component {
   constructor(props) {
@@ -24,12 +26,17 @@ export default class ReEditor extends React.Component {
   }
 
   handleInsertImage = (image) => {
-    this.editor.current.insertBlock({
-      type: 'Image',
-      isVoid: true,
-      data: { src: image }
-    })
-    .insertBlock('paragraph')
+    command(this.editor.current)('image', image);
+  }
+
+  handlePaste = (event, editor, next) => {
+    const transfer = getEventTransfer(event);
+    const type = getPasteType(transfer);
+    const paste = paster[type];
+    if (paste) {
+      return paste({ editor, transfer });
+    }
+    next();
   }
 
   renderMark = (props, editor, next) => {
@@ -71,6 +78,7 @@ export default class ReEditor extends React.Component {
           autoFocus={autoFocus}
           placeholder={placeholder}
           className={className}
+          onPaste={this.handlePaste}
         />
         <ImageUploader insertImage={this.handleInsertImage} />
       </>
