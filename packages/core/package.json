@@ -1,0 +1,33 @@
+{
+  "name": "@re-editor/core",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:babel": "babel src/scripts --out-dir lib/scripts --config-file ../../babel.config.js",
+    "compile:css": "postcss src/styles/index.css -o lib/styles/index.css --config ../../",
+    "dev:babel": "npm run compile:babel -- --watch",
+    "dev:css": "npm run compile:css -- --watch",
+    "clear": "rm -rf lib",
+    "build": "npm-run-all clear compile:babel compile:css",
+    "start": "npm-run-all -p dev:css dev:babel"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=16.3.0",
+    "react-dom": ">=16.3.0"
+  },
+  "dependencies": {
+    "immutable": "3.8.1",
+    "slate": "^0.44.12",
+    "slate-react": "^0.21.18"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2"
+  }
+}

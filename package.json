@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "re-editor-packages",
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lerna run start --parallel",
+    "release": "lerna version --exact --force-publish --no-push -m \"chore(release): publish %s\" --conventional-commits"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wowlusitong/re-editor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wowlusitong/re-editor/issues"
+  },
+  "homepage": "https://github.com/wowlusitong/re-editor#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.4.10",
+    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "lerna": "^3.13.1",
+    "postcss-cli": "^6.1.2",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.1.2",
+    "postcss-simple-vars": "^5.0.2"
+  }
+}

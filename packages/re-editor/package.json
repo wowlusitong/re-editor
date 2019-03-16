@@ -1,0 +1,28 @@
+{
+  "name": "re-editor",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:babel": "babel src --out-dir lib --config-file ../../babel.config.js",
+    "compile:css": "postcss src/styles/index.css -o lib/styles/index.css --config ../../",
+    "dev:babel": "npm run compile:babel -- --watch",
+    "dev:css": "npm run compile:css -- --watch",
+    "clear": "rm -rf lib",
+    "build": "npm-run-all clear compile:babel compile:css",
+    "start": "npm-run-all -p dev:babel"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@re-editor/core": "^1.0.0",
+    "@re-editor/toolbar-antd": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2"
+  }
+}
