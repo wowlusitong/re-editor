@@ -1,6 +1,6 @@
 {
   "name": "@re-editor/toolbar-antd",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "lib/scripts/index.js",
   "scripts": {
