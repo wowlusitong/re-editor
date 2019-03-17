@@ -1,6 +1,6 @@
 {
   "name": "@re-editor/examples",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "clean-webpack-plugin": "^2.0.1",
-    "re-editor": "0.0.2",
+    "re-editor": "0.0.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   }
