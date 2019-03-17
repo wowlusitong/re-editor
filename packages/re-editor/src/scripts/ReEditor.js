@@ -2,8 +2,6 @@ import React from 'react';
 import Editor, {utils} from '@re-editor/core';
 import Toolbar from '@re-editor/toolbar-antd';
 
-import '@re-editor/core/lib/styles/index.css';
-
 export default class ReEditor extends React.Component {
   constructor(props) {
     super(props);
