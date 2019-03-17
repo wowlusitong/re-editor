@@ -1,0 +1,5 @@
+.toolbar-antd-cotnainer {
+  .ant-btn-group, .ant-select {
+    margin-right: 10px;
+  }
+}

@@ -11,7 +11,8 @@
     "dev:css": "npm run compile:css -- --watch",
     "clear": "rm -rf lib",
     "build": "npm-run-all clear compile:babel compile:css",
-    "start": "npm-run-all -p dev:css dev:babel"
+    "start": "npm-run-all -p dev:css dev:babel",
+    "prepublish": "npm run build"
   },
   "keywords": [],
   "author": "",

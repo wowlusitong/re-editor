@@ -6,8 +6,6 @@ import Button from '~/components/Button';
 import Icon from '~/components/Icon';
 import Context from '~/components/Context';
 
-import "antd/dist/antd.css";
-
 export default class Toolbar extends React.Component {
   handleSelect = (value) => {
     const { editor } = this.props;

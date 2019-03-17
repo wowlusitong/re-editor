@@ -10,8 +10,9 @@
     "dev:babel": "npm run compile:babel -- --watch",
     "dev:css": "npm run compile:css -- --watch",
     "clear": "rm -rf lib",
-    "build": "npm-run-all clear compile:babel",
-    "start": "npm-run-all -p dev:babel"
+    "build": "npm-run-all clear compile:babel compile:css",
+    "start": "npm-run-all -p dev:babel dev:css",
+    "prepublish": "npm run build"
   },
   "keywords": [],
   "author": "",

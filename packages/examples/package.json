@@ -22,6 +22,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^2.0.1",
     "re-editor": "^0.0.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"

@@ -2,16 +2,17 @@
   "name": "re-editor",
   "version": "0.0.1",
   "description": "",
-  "main": "lib/index.js",
+  "main": "lib/scripts/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:babel": "babel src --out-dir lib --config-file ../../babel.config.js",
+    "compile:babel": "babel src/scripts --out-dir lib/scripts --config-file ../../babel.config.js",
     "compile:css": "postcss src/styles/index.css -o lib/styles/index.css --config ../../",
     "dev:babel": "npm run compile:babel -- --watch",
     "dev:css": "npm run compile:css -- --watch",
     "clear": "rm -rf lib",
-    "build": "npm-run-all clear compile:babel",
-    "start": "npm-run-all -p dev:babel"
+    "build": "npm-run-all clear compile:babel compile:css",
+    "start": "npm-run-all -p dev:babel dev:css",
+    "prepublish": "npm run build"
   },
   "keywords": [],
   "author": "",

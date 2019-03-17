@@ -1,0 +1,8 @@
+@import "@re-editor/toolbar-antd/lib/styles/index.css";
+
+.re-editor-container {
+  .re-editor {
+    min-height: 200px;
+    margin-top: 10px;
+  }
+}
