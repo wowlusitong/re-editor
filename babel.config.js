@@ -4,7 +4,10 @@ const presets = [
 ];
 
 const plugins = [
-  "@babel/plugin-proposal-class-properties"
+  "@babel/plugin-syntax-dynamic-import",
+  "@babel/plugin-proposal-export-namespace-from",
+  ["@babel/plugin-proposal-decorators", { "legacy": true }],
+  ["@babel/plugin-proposal-class-properties", { "loose" : true }]
 ]
 
 const overrides = [

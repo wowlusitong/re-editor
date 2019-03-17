@@ -21,7 +21,10 @@
     "react-dom": ">=16.3.0"
   },
   "dependencies": {
+    "antd": "^3.15.0",
+    "classnames": "^2.2.6",
     "immutable": "3.8.1",
+    "recompose": "^0.30.0",
     "slate": "^0.44.12",
     "slate-react": "^0.21.18"
   },

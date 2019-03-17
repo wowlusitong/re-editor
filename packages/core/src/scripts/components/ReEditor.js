@@ -1,6 +1,7 @@
 import React from 'react';
 import { Value } from 'slate';
 import { Editor, getEventTransfer } from 'slate-react';
+import { Map } from 'immutable';
 
 import nodes from '~/components/nodes';
 import marks from '~/components/marks';
@@ -8,12 +9,15 @@ import { initialValue } from '~/utils/utils';
 import ImageUploader from '~/components/utils/ImageUploader';
 import paster, { getPasteType } from '~/events/paste';
 import command from '~/commands';
+import NodeWrapper from '~/components/wrappers/NodeWrapper';
+import DataContext from '~/components/contexts/Data';
 
 export default class ReEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: Value.fromJSON(props.value || initialValue)
+      value: Value.fromJSON(props.value || initialValue),
+      data: Map()
     }
     this.editor = React.createRef();
   }
@@ -25,8 +29,16 @@ export default class ReEditor extends React.Component {
     onChange(value);
   }
 
+  onChangeData = (changer, callback = () => {}) => {
+    this.setState(state => ({
+      data: typeof changer === 'function' ? changer(state.data) : changer
+    }), callback);
+  }
+
   handleInsertImage = (image) => {
-    command(this.editor.current)('image', image);
+    const { data } = this.state;
+
+    command(this.editor.current)('image', image, data.get('replaceNode'));
   }
 
   handlePaste = (event, editor, next) => {
@@ -55,9 +67,11 @@ export default class ReEditor extends React.Component {
     const Component = nodes[type];
     if (Component) {
       return (
-        <Component node={node} editor={editor} {...attributes}>
-          {children}
-        </Component>
+        <NodeWrapper editor={editor} node={node} {...rest}>
+          <Component node={node} editor={editor} {...attributes}>
+            {children}
+          </Component>
+        </NodeWrapper>
       )
     }
     return next();
@@ -65,10 +79,10 @@ export default class ReEditor extends React.Component {
 
   render() {
     const { placeholder, autoFocus, className } = this.props;
-    const { value } = this.state;
+    const { value, data } = this.state;
 
     return (
-      <>
+      <DataContext.Provider value={{ value, data, onChangeData: this.onChangeData }}>
         <Editor
           value={value}
           onChange={this.handleChange}
@@ -81,7 +95,7 @@ export default class ReEditor extends React.Component {
           onPaste={this.handlePaste}
         />
         <ImageUploader insertImage={this.handleInsertImage} />
-      </>
+      </DataContext.Provider>
     )
   }
 }

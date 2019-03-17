@@ -1,4 +1,6 @@
+@import "./tool.css";
 @import "./uploader.css";
+@import "./node-wrapper.css";
 
 .align-left {
   text-align: left;

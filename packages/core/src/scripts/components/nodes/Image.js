@@ -11,14 +11,34 @@ export default class ReImage extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { value, onChange, node, editor } = this.props;
+    if (this.state.width == null && this.state.height == null) {
+      const img = new Image();
+      img.src = node.getIn(['data', 'src']);
+      img.onload = () => {
+        const width = String(img.width);
+        const height = String(img.height);
+        this.setState({
+          width,
+          height
+        });
+        setData(editor, node, d => d.set('width', width).set('height', height));
+      };
+    }
+  }
+
   render() {
-    const { node, isSelected } = this.props;
+    const { node, isSelected, children } = this.props;
     return (
-      <img
-        src={node.data.get('src')}
-        width={node.data.get('width')}
-        height={node.data.get('height')}
-      />
+      <span>
+        <img
+          src={node.data.get('src')}
+          width={node.data.get('width')}
+          height={node.data.get('height')}
+        />
+        {children}
+      </span>
     );
   }
 }
