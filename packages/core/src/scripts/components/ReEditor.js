@@ -38,7 +38,7 @@ export default class ReEditor extends React.Component {
   handleInsertImage = (image) => {
     const { data } = this.state;
 
-    command(this.editor.current)('image', image, data.get('replaceNode'));
+    command(this.editor.current)('image', image);
   }
 
   handlePaste = (event, editor, next) => {

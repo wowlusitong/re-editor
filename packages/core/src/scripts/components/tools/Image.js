@@ -24,9 +24,10 @@ export default class Image extends React.Component {
 
   handleReplace = () => {
     const { editor, node, onChangeData } = this.props;
-    onChangeData(d => d.set('replaceNode', node.key), () => {
-      command(editor)('image-local');
-    });
+
+    //FIXME
+    window.replaceNodeKey = node.key
+    command(editor)('image-local');
   }
 
   handleDelete = (event) => {

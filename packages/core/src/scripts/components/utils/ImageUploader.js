@@ -14,7 +14,6 @@ export default class ImageUploader extends React.Component {
       reader.readAsDataURL(file);
       reader.addEventListener('load', () => {
         insertImage(reader.result);
-        onChangeData(d => d.set('replaceNode', null)
       })
     }
   }
