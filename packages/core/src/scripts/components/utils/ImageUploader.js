@@ -25,6 +25,7 @@ export default class ImageUploader extends React.Component {
         type="file"
         accept="image/*"
         onChange={this.handleFileUpload}
+        style={{display: 'none'}}
         />
     )
   }
