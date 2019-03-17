@@ -22,9 +22,11 @@ export default class ReEditor extends React.Component {
     this.setState({
       value
     })
+    this.props.onChange(value);
   }
 
   render() {
+    const { placeholder } = this.props;
     const { value } = this.state;
 
     return (
@@ -32,7 +34,7 @@ export default class ReEditor extends React.Component {
         {this.editor.current && <Toolbar value={value} editor={this.editor.current.editor.current} />}
         <Editor
           autoFocus
-          placeholder="请输入内容"
+          placeholder={placeholder}
           ref={this.editor}
           value={value}
           onChange={this.handleChange}
