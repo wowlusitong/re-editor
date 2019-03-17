@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lerna run start --parallel",
     "build": "lerna run build",
-    "release": "lerna version --exact --force-publish --no-push -m \"chore(release): publish %s\" --conventional-commits"
+    "release": "lerna publish --exact --force-publish --no-push -m \"chore(release): publish %s\" --conventional-commits"
   },
   "repository": {
     "type": "git",
