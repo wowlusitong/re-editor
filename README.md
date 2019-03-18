@@ -1,4 +1,4 @@
-# re-editor
+# re-editor &middot; [![Netlify Status](https://api.netlify.com/api/v1/badges/815fce6a-8e8e-4af9-b2c8-5c15dace9288/deploy-status)](https://app.netlify.com/sites/re-editor/deploys) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/wowlusitong/re-editor/blob/master/LICENSE)  [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 一个开箱即用的React富文本编辑器 🚀当然也可以定制化啦👏
 
 编辑器默认工具栏使用了ant，如果想换个风格，可以自定义工具栏
