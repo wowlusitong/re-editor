@@ -1,6 +1,8 @@
 # re-editor
 一个开箱即用的React富文本编辑器 🚀当然也可以定制化啦👏
 
+编辑器默认工具栏使用了ant，使用自定义方式可以构建自己的工具栏
+
 <img width="500" alt="屏幕快照 2019-03-17 23 11 49" src="https://user-images.githubusercontent.com/3221051/54493370-2faedb80-490a-11e9-9b9e-5d17febedda2.png">
 
 
@@ -14,10 +16,12 @@
 - 定制化，可自行开发任意风格和形式的工具条 [API补全中]
 - 支持元素功能设置，例如修改图片大小 
 
+
 # 使用方法
 re-editor有两种使用方法，提供开箱即用的方式，也可以进行深度的定制化
 
 ## 开箱即用
+
 ### 安装依赖
 ```sh
 $ npm install re-editor
