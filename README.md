@@ -1,7 +1,7 @@
 # re-editor
 一个开箱即用的React富文本编辑器 🚀当然也可以定制化啦👏
 
-编辑器默认工具栏使用了ant，使用自定义方式可以构建自己的工具栏
+编辑器默认工具栏使用了ant，如果想换个风格，可以自定义工具栏
 
 <img width="500" alt="屏幕快照 2019-03-17 23 11 49" src="https://user-images.githubusercontent.com/3221051/54493370-2faedb80-490a-11e9-9b9e-5d17febedda2.png">
 
