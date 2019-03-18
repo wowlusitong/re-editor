@@ -4,7 +4,7 @@
   background: #fff;
   padding: 5px 3px;
   border: 1px solid #d9d9d9;
-  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
   z-index: 100;
   display: flex;
   left: 0px;
@@ -20,7 +20,8 @@
     margin: 0px 3px;
 
     &.hover:hover {
-      &, button {
+      &,
+      button {
         background: #f4f4f4;
       }
     }

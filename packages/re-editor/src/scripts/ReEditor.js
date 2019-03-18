@@ -1,5 +1,5 @@
 import React from 'react';
-import Editor, {utils} from '@re-editor/core';
+import Editor, { utils } from '@re-editor/core';
 import Toolbar from '@re-editor/toolbar-antd';
 
 export default class ReEditor extends React.Component {
@@ -9,19 +9,19 @@ export default class ReEditor extends React.Component {
     this.ref = React.createRef();
     this.state = {
       value: props.value || utils.initialValue
-    }
+    };
   }
 
   componentDidMount() {
     this.forceUpdate();
   }
 
-  handleChange = (value) => {
+  handleChange = value => {
     this.setState({
       value
-    })
+    });
     this.props.onChange(value);
-  }
+  };
 
   render() {
     const { placeholder } = this.props;
@@ -29,15 +29,17 @@ export default class ReEditor extends React.Component {
 
     return (
       <div className="re-editor-container">
-        {this.editor.current && <Toolbar value={value} editor={this.editor.current.editor.current} />}
+        {this.editor.current && (
+          <Toolbar value={value} editor={this.editor.current.editor.current} />
+        )}
         <Editor
           autoFocus
           placeholder={placeholder}
           ref={this.editor}
           value={value}
           onChange={this.handleChange}
-          />
+        />
       </div>
-    )
+    );
   }
 }

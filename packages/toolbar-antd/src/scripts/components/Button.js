@@ -6,19 +6,19 @@ import Icon from '~/components/Icon';
 import Context from '~/components/Context';
 
 export default class Button extends React.Component {
-  handleMouseDown = (event) => {
+  handleMouseDown = event => {
     event.preventDefault();
 
     const { type } = this.props;
     const { editor } = this.context;
     command(editor)(type);
-  }
+  };
 
   isActive = () => {
     const { type } = this.props;
-    const { value, editor } = this.context;
+    const { value } = this.context;
     return utils.isActive(utils.toValue(value), type);
-  }
+  };
 
   render() {
     const { type, title, icon } = this.props;
@@ -29,11 +29,11 @@ export default class Button extends React.Component {
           size="small"
           onMouseDown={this.handleMouseDown}
           type={this.isActive() ? 'primary' : ''}
-          >
+        >
           <Icon type={`icon-${icon || type}`} />
         </AntButton>
       </Tooltip>
-    )
+    );
   }
 }
 Button.Group = AntButton.Group;

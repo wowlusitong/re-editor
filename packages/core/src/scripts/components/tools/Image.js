@@ -8,8 +8,11 @@ import command from '~/commands';
 import SlateInput from '~/components/utils/SlateInput';
 import { setData } from '~/utils/utils';
 
-@fromRenderProps(DataContext.Consumer, ({ data, onChangeData }) => ({ data, onChangeData }))
-@withProps((props) => ({
+@fromRenderProps(DataContext.Consumer, ({ data, onChangeData }) => ({
+  data,
+  onChangeData
+}))
+@withProps(props => ({
   width: props.node.data.get('width'),
   height: props.node.data.get('height')
 }))
@@ -19,39 +22,39 @@ export default class Image extends React.Component {
     this.state = {
       width: props.width,
       height: props.height
-    }
+    };
   }
 
   handleReplace = () => {
-    const { editor, node, onChangeData } = this.props;
+    const { editor, node } = this.props;
 
     //FIXME
-    window.replaceNodeKey = node.key
+    window.replaceNodeKey = node.key;
     command(editor)('image-local');
-  }
+  };
 
-  handleDelete = (event) => {
+  handleDelete = event => {
     event.stopPropagation();
 
     const { editor, node } = this.props;
-    editor.removeNodeByKey(node.key)
-  }
+    editor.removeNodeByKey(node.key);
+  };
 
-  handleChangeWidth = (width) => {
-    const { editor , node } = this.props;
+  handleChangeWidth = width => {
+    const { editor, node } = this.props;
     this.setState({
       width
     });
     setData(editor, node, d => d.set('width', width));
-  }
+  };
 
-  handleChangeHeight = (height) => {
+  handleChangeHeight = height => {
     const { editor, node } = this.props;
     this.setState({
       height
     });
     setData(editor, node, d => d.set('height', height));
-  }
+  };
 
   render() {
     const { width, height } = this.state;
@@ -72,6 +75,6 @@ export default class Image extends React.Component {
           <Icon type="icon-delete" />
         </Item>
       </>
-    )
+    );
   }
 }

@@ -2,17 +2,15 @@ import React from 'react';
 import { findDOMNode } from 'react-dom';
 
 export default class ToolWrapper extends React.Component {
-  handleClickOutside = (event) => {
+  handleClickOutside = event => {
     const dom = findDOMNode(this);
-    if (
-      (dom && !dom.contains(event.target))
-    ) {
+    if (dom && !dom.contains(event.target)) {
       const { onClick } = this.props;
       if (onClick) {
         onClick();
       }
     }
-  }
+  };
 
   componentDidMount() {
     window.addEventListener('mousedown', this.handleClickOutside);
@@ -27,6 +25,6 @@ export default class ToolWrapper extends React.Component {
       <div className="tool-wrapper" contentEditable={false}>
         {this.props.children}
       </div>
-    )
+    );
   }
 }

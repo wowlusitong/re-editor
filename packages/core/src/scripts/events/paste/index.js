@@ -9,4 +9,4 @@ export function getPasteType(transfer) {
 
 export default {
   image
-}
+};

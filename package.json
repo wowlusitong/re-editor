@@ -7,8 +7,19 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint packages && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "packages/**/*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint packages",
     "start": "lerna run start --parallel",
     "build": "lerna run build",
     "release": "lerna publish --exact --force-publish --no-push -m \"chore(release): publish %s\" --conventional-commits"
@@ -31,13 +42,23 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.4.10",
+    "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^5.15.2",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-import-resolver-babel-module": "^5.0.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
     "lerna": "^3.13.1",
+    "lint-staged": "^8.1.5",
     "postcss-cli": "^6.1.2",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.2",
-    "postcss-simple-vars": "^5.0.2"
+    "postcss-simple-vars": "^5.0.2",
+    "prettier": "1.16.4"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.3.0",

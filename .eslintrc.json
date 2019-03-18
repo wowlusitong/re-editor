@@ -1,0 +1,27 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["plugin:import/errors"],
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-unused-vars": ["error", { "args": "after-used", "ignoreRestSiblings": true }],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
+}

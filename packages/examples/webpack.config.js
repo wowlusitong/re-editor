@@ -24,21 +24,19 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            root: '../../'
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              root: '../../'
+            }
           }
-        }],
+        ],
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       }
     ]
   },
@@ -47,4 +45,4 @@ module.exports = {
     hot: true,
     open: true
   }
-}
+};

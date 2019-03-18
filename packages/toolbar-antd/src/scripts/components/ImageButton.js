@@ -9,7 +9,7 @@ export default class ImageButton extends React.Component {
   handleClick = ({ key }) => {
     const { editor } = this.context;
     command(editor)(key);
-  }
+  };
 
   renderMenu = () => {
     return (
@@ -20,8 +20,8 @@ export default class ImageButton extends React.Component {
           </Tooltip>
         </Menu.Item>
       </Menu>
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -30,7 +30,7 @@ export default class ImageButton extends React.Component {
           <Icon type="icon-image" />
         </Button>
       </Dropdown>
-    )
+    );
   }
 }
 

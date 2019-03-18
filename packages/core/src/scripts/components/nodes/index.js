@@ -37,15 +37,15 @@ export const basicNodes = {
     props: {
       className: 'align-justify'
     }
-  },
+  }
 };
 
 const list = {
   unorderedlist: { name: 'ul' },
   orderedlist: { name: 'ol' }
-}
+};
 
 export default {
   Image,
-  ...generateElementComponents({...basicNodes, ...list})
+  ...generateElementComponents({ ...basicNodes, ...list })
 };

@@ -5,31 +5,37 @@ import DataContext from '~/components/contexts/Data';
 import ToolWrapper from '~/components/wrappers/ToolWrapper';
 import tools from '~/components/tools';
 
-@fromRenderProps(DataContext.Consumer, ({ data, onChangeData }) => ({ data, onChangeData }))
-@withProps((props) => {
-  const { data, node, editor, isSelected } = props;
+@fromRenderProps(DataContext.Consumer, ({ data, onChangeData }) => ({
+  data,
+  onChangeData
+}))
+@withProps(props => {
+  const { data, node, isSelected } = props;
   return {
     Tool: tools[node.type],
     isSelected: data.getIn([node.key, 'isSelected'], isSelected)
-  }
+  };
 })
 export default class NodeWrapper extends React.Component {
   handleClick = () => {
-    const { node, data, onChangeData } = this.props;
+    const { node, onChangeData } = this.props;
 
     onChangeData(d => d.setIn([node.key, 'isSelected'], true));
-  }
+  };
 
   handleDeselect = () => {
     const { onChangeData, node } = this.props;
-    onChangeData(d => d.setIn([node.key, 'isSelected'], false))
-  }
+    onChangeData(d => d.setIn([node.key, 'isSelected'], false));
+  };
 
   render() {
-    const { node, editor, children, Tool, isSelected, isFocused } = this.props;
+    const { node, editor, children, Tool, isSelected } = this.props;
 
     return (
-      <div onClick={this.handleClick} className={`node-wrapper node-wrapper-${node.type}`}>
+      <div
+        onClick={this.handleClick}
+        className={`node-wrapper node-wrapper-${node.type}`}
+      >
         {children}
         {isSelected && Tool && (
           <ToolWrapper onClick={this.handleDeselect}>
@@ -37,6 +43,6 @@ export default class NodeWrapper extends React.Component {
           </ToolWrapper>
         )}
       </div>
-    )
+    );
   }
 }

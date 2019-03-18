@@ -18,28 +18,28 @@ export default class ReEditor extends React.Component {
     this.state = {
       value: Value.fromJSON(props.value || initialValue),
       data: Map()
-    }
+    };
     this.editor = React.createRef();
   }
 
-
   handleChange = ({ value }) => {
-    const { onChange, autoFocus } = this.props;
+    const { onChange } = this.props;
     this.setState({ value });
     onChange(value);
-  }
+  };
 
   onChangeData = (changer, callback = () => {}) => {
-    this.setState(state => ({
-      data: typeof changer === 'function' ? changer(state.data) : changer
-    }), callback);
-  }
+    this.setState(
+      state => ({
+        data: typeof changer === 'function' ? changer(state.data) : changer
+      }),
+      callback
+    );
+  };
 
-  handleInsertImage = (image) => {
-    const { data } = this.state;
-
+  handleInsertImage = image => {
     command(this.editor.current)('image', image);
-  }
+  };
 
   handlePaste = (event, editor, next) => {
     const transfer = getEventTransfer(event);
@@ -49,7 +49,7 @@ export default class ReEditor extends React.Component {
       return paste({ editor, transfer });
     }
     next();
-  }
+  };
 
   renderMark = (props, editor, next) => {
     const { children, mark, attributes } = props;
@@ -58,7 +58,7 @@ export default class ReEditor extends React.Component {
       return <Component {...attributes}>{children}</Component>;
     }
     return next();
-  }
+  };
 
   renderNode = (props, editor, next) => {
     const { children, node, attributes, ...rest } = props;
@@ -72,17 +72,19 @@ export default class ReEditor extends React.Component {
             {children}
           </Component>
         </NodeWrapper>
-      )
+      );
     }
     return next();
-  }
+  };
 
   render() {
     const { placeholder, autoFocus, className } = this.props;
     const { value, data } = this.state;
 
     return (
-      <DataContext.Provider value={{ value, data, onChangeData: this.onChangeData }}>
+      <DataContext.Provider
+        value={{ value, data, onChangeData: this.onChangeData }}
+      >
         <Editor
           value={value}
           onChange={this.handleChange}
@@ -96,10 +98,10 @@ export default class ReEditor extends React.Component {
         />
         <ImageUploader insertImage={this.handleInsertImage} />
       </DataContext.Provider>
-    )
+    );
   }
 }
 
 ReEditor.defaultProps = {
   className: 're-editor'
-}
+};

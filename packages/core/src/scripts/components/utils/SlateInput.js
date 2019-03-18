@@ -10,16 +10,16 @@ export default class SmallInput extends React.Component {
 
   handleFocus = () => {
     this.isFocus = true;
-  }
+  };
 
   handleBlur = () => {
     this.isFocus = false;
-  }
+  };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const value = event.target.value;
     this.props.onChange(value);
-  }
+  };
 
   componentDidUpdate() {
     if (this.isFocus) {
@@ -42,6 +42,6 @@ export default class SmallInput extends React.Component {
         onChange={this.handleChange}
         ref={this.input}
       />
-    )
+    );
   }
 }

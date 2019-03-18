@@ -6,12 +6,12 @@ export default class App extends React.Component {
     super();
     this.state = {
       value: JSON.parse(localStorage.getItem('re-editor-value'))
-    }
+    };
   }
 
-  handleChange = (value) => {
-    localStorage.setItem('re-editor-value', JSON.stringify(value.toJS()))
-  }
+  handleChange = value => {
+    localStorage.setItem('re-editor-value', JSON.stringify(value.toJS()));
+  };
 
   render() {
     const { value } = this.state;
@@ -22,8 +22,8 @@ export default class App extends React.Component {
           value={value}
           onChange={this.handleChange}
           placeholder="请输入内容"
-          />
+        />
       </div>
-    )
+    );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { setData } from '~/utils/utils'
+import { setData } from '~/utils/utils';
 
 export default class ReImage extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class ReImage extends React.Component {
   }
 
   componentDidMount() {
-    const { value, onChange, node, editor } = this.props;
+    const { node, editor } = this.props;
     if (this.state.width == null && this.state.height == null) {
       const img = new Image();
       img.src = node.getIn(['data', 'src']);
@@ -29,7 +29,7 @@ export default class ReImage extends React.Component {
   }
 
   render() {
-    const { node, isSelected, children } = this.props;
+    const { node, children } = this.props;
     return (
       <span>
         <img

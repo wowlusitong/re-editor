@@ -16,7 +16,7 @@ export const initialValue = {
       }
     ]
   }
-}
+};
 
 export function generateElementComponents(natives) {
   return Object.keys(natives).reduce((components, name) => {
@@ -24,9 +24,7 @@ export function generateElementComponents(natives) {
     const component = ({ node, value, onChange, parent, editor, ...props }) =>
       React.createElement(
         element.name,
-        element.props
-          ? Object.assign(props, element.props)
-          : props
+        element.props ? Object.assign(props, element.props) : props
       );
     components[name] = component;
     return components;
@@ -46,9 +44,9 @@ export function isActive(value, type) {
 }
 
 export function toValue(value) {
-  return Value.fromJSON(value)
+  return Value.fromJSON(value);
 }
 
 export function setData(editor, node, changeData) {
-  editor.setNodeByKey(node.key, { data: changeData(node.data) })
+  editor.setNodeByKey(node.key, { data: changeData(node.data) });
 }
