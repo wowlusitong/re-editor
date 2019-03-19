@@ -1,6 +1,6 @@
 {
   "name": "re-editor",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/scripts/index.js",
   "scripts": {
@@ -18,8 +18,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@re-editor/core": "0.0.3",
-    "@re-editor/toolbar-antd": "0.0.3"
+    "@re-editor/core": "0.1.0",
+    "@re-editor/toolbar-antd": "0.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
