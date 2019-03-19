@@ -1,14 +1,12 @@
 # re-editor &middot; [![Netlify Status](https://api.netlify.com/api/v1/badges/815fce6a-8e8e-4af9-b2c8-5c15dace9288/deploy-status)](https://app.netlify.com/sites/re-editor/deploys) [![CircleCI](https://circleci.com/gh/wowlusitong/re-editor.svg?style=svg)](https://circleci.com/gh/wowlusitong/re-editor)  [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/wowlusitong/re-editor/blob/master/LICENSE)  [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 一个开箱即用的React富文本编辑器 🚀当然也可以定制化啦👏
 
-编辑器默认工具栏使用了ant，如果想换个风格，可以自定义工具栏
-
 <img width="500" alt="屏幕快照 2019-03-17 23 11 49" src="https://user-images.githubusercontent.com/3221051/54493370-2faedb80-490a-11e9-9b9e-5d17febedda2.png">
 
 
 - [使用方法](#使用方法)
-  - [开箱即用](#开箱即用)
-  - [自定义](#自定义)
+  - [开箱即用，提供 antd 风格工具栏](#开箱即用)
+  - [自定义, 只引入编辑器核心,定制工具栏](#自定义)
 - [常见问题](#FAQ)
 - [支持的功能](#功能)
 
@@ -17,12 +15,14 @@
 - 定制化，可自行开发任意风格和形式的工具条 [API补全中]
 - 支持元素功能设置，例如修改图片大小
 
-
 # 使用方法
+编辑器为适应不同开发需求，提供两种使用方法
+1. 
+2. @re-editor/core + 自定义toolbar
 re-editor有两种使用方法，提供开箱即用的方式，也可以进行深度的定制化
 
 ## 开箱即用
-
+re-editor是一个封装好的组件, 安装就可以使用, 它里面包含 [@re-editor/core](https://www.npmjs.com/package/@re-editor/core) 和 [@re-editor/toolbar-antd](https://www.npmjs.com/package/@re-editor/toolbar-antd)
 ### 安装依赖
 ```sh
 $ npm install re-editor
