@@ -1,5 +1,11 @@
-import { Icon } from 'antd';
+import React from 'react';
 
-export default Icon.createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_1089062_6v0d8uzk3ik.js'
-});
+const Icon = ({ type, color, size, ...rest }) => (
+  <i
+    {...rest}
+    className={`iconfont ${type}`}
+    style={{ color: color || 'black', fontSize: size || '16px' }}
+  />
+);
+
+export default Icon;

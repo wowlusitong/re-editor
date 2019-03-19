@@ -2,8 +2,6 @@ import React from 'react';
 import Tooltip from 'rc-tooltip';
 import classNames from 'classnames';
 
-import 'rc-tooltip/assets/bootstrap.css';
-
 export default class ToolItem extends React.Component {
   handleClick = event => {
     const { onClick } = this.props;
