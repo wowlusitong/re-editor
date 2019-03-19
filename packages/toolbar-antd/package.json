@@ -5,7 +5,7 @@
   "main": "lib/scripts/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:babel": "babel src/scripts --out-dir lib/scripts --config-file ../../babel.config.js",
+    "compile:babel": "babel src/scripts --out-dir lib/scripts --verbose --config-file ../../babel.config.js",
     "compile:css": "postcss src/styles/index.css -o lib/styles/index.css --config ../../",
     "dev:babel": "npm run compile:babel -- --watch",
     "dev:css": "npm run compile:css -- --watch",
