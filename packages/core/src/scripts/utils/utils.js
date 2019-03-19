@@ -47,6 +47,10 @@ export function toValue(value) {
   return Value.fromJSON(value);
 }
 
+export function isIgnoreWrapper(type) {
+  return ['tr', 'td', 'tbody', 'thead'].includes(type);
+}
+
 export function setData(editor, node, changeData) {
   editor.setNodeByKey(node.key, { data: changeData(node.data) });
 }

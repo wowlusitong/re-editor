@@ -9,10 +9,12 @@ export const basicNodes = {
   h4: { name: 'h4' },
   h5: { name: 'h5' },
   h6: { name: 'h6' },
+  table: { name: 'table' },
   tbody: { name: 'tbody' },
   thead: { name: 'thead' },
   tr: { name: 'tr' },
   th: { name: 'th' },
+  td: { name: 'td' },
   listitem: { name: 'li' },
   'align-right': {
     name: 'div',

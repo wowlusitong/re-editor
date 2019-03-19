@@ -4,6 +4,7 @@ import { withProps, fromRenderProps } from 'recompose';
 import DataContext from '~/components/contexts/Data';
 import ToolWrapper from '~/components/wrappers/ToolWrapper';
 import tools from '~/components/tools';
+import { isIgnoreWrapper } from '~/utils/utils';
 
 @fromRenderProps(DataContext.Consumer, ({ data, onChangeData }) => ({
   data,
@@ -30,7 +31,9 @@ export default class NodeWrapper extends React.Component {
 
   render() {
     const { node, editor, children, Tool, isSelected } = this.props;
-
+    if (isIgnoreWrapper(node.type)) {
+      return children;
+    }
     return (
       <div
         onClick={this.handleClick}

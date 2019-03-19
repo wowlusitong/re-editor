@@ -1,5 +1,7 @@
 import Image from './Image';
+import Table from './Table';
 
 export default {
-  Image
+  Image,
+  table: Table
 };
