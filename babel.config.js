@@ -20,7 +20,7 @@ const overrides = [
     ]
   },
   {
-    test: ["packages/core", "packages/toolbar-antd"],
+    test: ["packages/toolbar-antd"],
     plugins: [
       ["import", {
         "libraryName": "antd",
