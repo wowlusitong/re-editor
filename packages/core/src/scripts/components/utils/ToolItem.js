@@ -1,6 +1,8 @@
 import React from 'react';
-import { Tooltip } from 'antd';
+import Tooltip from 'rc-tooltip';
 import classNames from 'classnames';
+
+import 'rc-tooltip/assets/bootstrap.css';
 
 export default class ToolItem extends React.Component {
   handleClick = event => {
@@ -13,7 +15,11 @@ export default class ToolItem extends React.Component {
   render() {
     const { children, tip, hover } = this.props;
     return (
-      <Tooltip title={tip}>
+      <Tooltip
+        placement="top"
+        mouseEnterDelay="0.2"
+        overlay={() => <div>{tip}</div>}
+      >
         <div
           className={classNames('tool-item', { hover })}
           onClick={this.handleClick}

@@ -25,6 +25,7 @@
     "antd": "^3.15.0",
     "classnames": "^2.2.6",
     "immutable": "3.8.1",
+    "rc-tooltip": "^3.7.3",
     "recompose": "^0.30.0",
     "slate": "^0.44.12",
     "slate-react": "^0.21.18"
