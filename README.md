@@ -17,9 +17,6 @@
 
 # 使用方法
 编辑器为适应不同开发需求，提供两种使用方法
-1. 
-2. @re-editor/core + 自定义toolbar
-re-editor有两种使用方法，提供开箱即用的方式，也可以进行深度的定制化
 
 ## 开箱即用
 re-editor是一个封装好的组件, 安装就可以使用, 它里面包含 [@re-editor/core](https://www.npmjs.com/package/@re-editor/core) 和 [@re-editor/toolbar-antd](https://www.npmjs.com/package/@re-editor/toolbar-antd)
