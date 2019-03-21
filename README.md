@@ -19,7 +19,7 @@
 编辑器为适应不同开发需求，提供两种使用方法
 
 ## 开箱即用
-re-editor是一个封装好的组件, 安装就可以使用, 它里面包含 [@re-editor/core](https://www.npmjs.com/package/@re-editor/core) 和 [@re-editor/toolbar-antd](https://www.npmjs.com/package/@re-editor/toolbar-antd)
+re-editor是一个封装好的组件, 安装就可以使用, 它里面包含 [@re-editor/core](https://www.npmjs.com/package/@re-editor/core) 和 [@re-editor/toolbar-antd](https://www.npmjs.com/package/@re-editor/toolbar-antd), 工具条默认使用antd风格，如要使用其他工具条请参考下面自定义说明
 ### 安装依赖
 ```sh
 $ npm install re-editor
@@ -41,8 +41,8 @@ import 're-editor/lib/styles/index.css'
 | onChange| 编辑器更改内容的回调|(value: [Value](https://docs.slatejs.org/slate-core/value)) => void
 | placeholder | 占位文本 | string
 
-# 自定义
-编辑器分为两个部分，`内容编辑区域` 和 `工具条`，大部分的自定义需求都是集中在工具条上
+## 自定义
+编辑器拆分为两个部分，内容编辑区域 和 工具条，下面介绍如何自定义工具条
 ### 安装编辑器核心
 ```sh
 $ npm install @re-editor/core
