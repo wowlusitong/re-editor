@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/wowlusitong/re-editor/compare/v0.0.3...v0.2.0) (2019-03-23)
+
+
+### Features
+
+* **core:** 增加代码高亮支持 ([521a807](https://github.com/wowlusitong/re-editor/commit/521a807))
+* **core:** 增加表格功能 ([1aee824](https://github.com/wowlusitong/re-editor/commit/1aee824))
+
+
+
+
+
 # [0.1.0](https://github.com/wowlusitong/re-editor/compare/v0.0.3...v0.1.0) (2019-03-19)
 
 

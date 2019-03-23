@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/wowlusitong/re-editor/compare/v0.0.3...v0.2.0) (2019-03-23)
+
+
+### Bug Fixes
+
+* **core:** 修复表格工具条点击事件不灵敏 ([ebd5a88](https://github.com/wowlusitong/re-editor/commit/ebd5a88))
+
+
+### Features
+
+* **core:** 代码高亮增加独立工具栏 ([55002b3](https://github.com/wowlusitong/re-editor/commit/55002b3))
+* **core:** 增加代码高亮支持 ([521a807](https://github.com/wowlusitong/re-editor/commit/521a807))
+* **core:** 增加表格功能 ([1aee824](https://github.com/wowlusitong/re-editor/commit/1aee824))
+
+
+
+
+
 # [0.1.0](https://github.com/wowlusitong/re-editor/compare/v0.0.3...v0.1.0) (2019-03-19)
 
 
