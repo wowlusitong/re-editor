@@ -54,3 +54,13 @@ export function isIgnoreWrapper(type) {
 export function setData(editor, node, changeData) {
   editor.setNodeByKey(node.key, { data: changeData(node.data) });
 }
+
+export function getContent(token) {
+  if (typeof token === 'string') {
+    return token;
+  } else if (typeof token.content === 'string') {
+    return token.content;
+  } else {
+    return token.content.map(getContent).join('');
+  }
+}

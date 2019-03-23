@@ -6,7 +6,7 @@ import Prism from 'prismjs';
 
 import nodes from '~/components/nodes';
 import marks from '~/components/marks';
-import { initialValue } from '~/utils/utils';
+import { initialValue, getContent } from '~/utils/utils';
 import ImageUploader from '~/components/utils/ImageUploader';
 import paster, { getPasteType } from '~/events/paste';
 import command from '~/commands';
@@ -82,9 +82,10 @@ export default class ReEditor extends React.Component {
     if (node.type !== 'code') {
       return next();
     }
+    const language = node.data.get('language', 'javascript');
     const texts = node.getTexts().toArray();
     const string = texts.map(t => t.text).join('\n');
-    const grammar = Prism.languages['javascript'];
+    const grammar = Prism.languages[language];
     const tokens = Prism.tokenize(string, grammar).filter(
       token => typeof token === 'object'
     );
@@ -92,19 +93,19 @@ export default class ReEditor extends React.Component {
     let text = texts[0];
     let startOffset = 0;
     let endOffset = 0;
-
     tokens.forEach(token => {
-      const index = texts.findIndex(text => text.text.includes(token.content));
+      const content = getContent(token);
+      const index = texts.findIndex(text => text.text.includes(content));
       if (index < 0) {
         return;
       }
       text = texts[index];
-      if (texts[index].text === token.content) {
+      if (texts[index].text === content) {
         startOffset = 0;
         endOffset = text.text.length;
       } else {
-        startOffset = text.text.indexOf(token.content);
-        endOffset = startOffset + token.content.length;
+        startOffset = text.text.indexOf(content);
+        endOffset = startOffset + content.length;
       }
       if (endOffset + 1 === text.text.length) {
         texts.splice(index, 1);

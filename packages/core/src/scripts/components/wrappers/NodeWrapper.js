@@ -18,10 +18,13 @@ import { isIgnoreWrapper } from '~/utils/utils';
   };
 })
 export default class NodeWrapper extends React.Component {
-  handleClick = () => {
+  handleClick = event => {
     const { node, onChangeData } = this.props;
-
-    onChangeData(d => d.setIn([node.key, 'isSelected'], true));
+    const toolbar = document.querySelector('.tool-wrapper');
+    const isInPlugin = toolbar && toolbar.contains(event.target);
+    if (!isInPlugin) {
+      onChangeData(d => d.setIn([node.key, 'isSelected'], true));
+    }
   };
 
   handleDeselect = () => {

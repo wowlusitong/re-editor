@@ -1,15 +1,66 @@
-.keyword {
-  color: #008dfe;
-}
-.function {
-  color: #f82026;
-}
-.punctuation {
-  color: #999999;
-}
-.string {
-  color: #0b8235;
-}
-.comment {
-  opacity: 0.3;
+.node-wrapper-code {
+  background: #f3f5f6;
+  border-radius: 3px;
+  padding: 10px;
+
+  .tool-wrapper {
+    margin-top: 10px;
+  }
+
+  select {
+    outline: none;
+  }
+
+  .comment,
+  .block-comment,
+  .prolog,
+  .doctype,
+  .cdata {
+    color: #7d8b99;
+  }
+
+  .punctuation {
+    color: #5f6364;
+  }
+
+  .property,
+  .tag,
+  .boolean,
+  .function-name,
+  .constant,
+  .symbol,
+  .deleted {
+    color: #ed5c65;
+  }
+
+  .selector,
+  .attr-name,
+  .string,
+  .char,
+  .builtin,
+  .number,
+  .inserted {
+    color: #2f9c0a;
+  }
+
+  .operator,
+  .entity,
+  .url,
+  .variable {
+    color: #a67f59;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .atrule,
+  .attr-value,
+  .keyword,
+  .function,
+  .class-name {
+    color: #008dfe;
+  }
+
+  .regex,
+  .important {
+    color: #e90;
+  }
 }
