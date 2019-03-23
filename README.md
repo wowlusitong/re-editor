@@ -1,7 +1,8 @@
 # re-editor &middot; [![Netlify Status](https://api.netlify.com/api/v1/badges/815fce6a-8e8e-4af9-b2c8-5c15dace9288/deploy-status)](https://app.netlify.com/sites/re-editor/deploys) [![CircleCI](https://circleci.com/gh/wowlusitong/re-editor.svg?style=svg)](https://circleci.com/gh/wowlusitong/re-editor) [![npm](https://img.shields.io/npm/v/re-editor.svg?style=popout)](https://www.npmjs.com/package/re-editor) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/wowlusitong/re-editor/blob/master/LICENSE)  [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 一个开箱即用的React富文本编辑器 🚀当然也可以定制化啦👏
 
-<img width="500" alt="屏幕快照 2019-03-17 23 11 49" src="https://user-images.githubusercontent.com/3221051/54493370-2faedb80-490a-11e9-9b9e-5d17febedda2.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/3221051/54867671-dd643380-4dbd-11e9-9539-18b15034d076.png">
+
 
 
 - [使用方法](#使用方法)
@@ -93,14 +94,17 @@ slate或draft并不是一个纯编辑器，它们更像是一个用于构建编�
 `h1` `h2` `h3` `h4` `h5` `h6`
 
 ## 其他
-- 图片
+- `图片`
   - 设置大小
   - 从剪贴板复制
-- 表格
+- `表格`
   - 增加行
   - 增加列
   - 删除行
   - 删除列
-- 代码高亮
+- `代码高亮`
+  - js
+  - css
+  - html
 
 其他功能持续增加中...
