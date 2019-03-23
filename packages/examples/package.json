@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "@re-editor/examples",
   "version": "0.1.0",
   "description": "",
