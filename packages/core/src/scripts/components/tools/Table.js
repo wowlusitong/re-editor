@@ -48,22 +48,22 @@ export default class Table extends React.Component {
   render() {
     return (
       <>
-        <Item hover tip="删除选中行">
-          <Icon type="icon-remove-column" onClick={this.handleRemoveColumn} />
+        <Item hover tip="删除选中行" onClick={this.handleRemoveColumn}>
+          <Icon type="icon-remove-column" />
         </Item>
-        <Item hover tip="增加列">
-          <Icon type="icon-insert-column" onClick={this.handleInsertColumn} />
-        </Item>
-        <Item.Split />
-        <Item hover tip="删除选中行">
-          <Icon type="icon-remove-row" onClick={this.handleRemoveRow} />
-        </Item>
-        <Item hover tip="增加行">
-          <Icon type="icon-insert-row" onClick={this.handleInsertRow} />
+        <Item hover tip="增加列" onClick={this.handleInsertColumn}>
+          <Icon type="icon-insert-column" />
         </Item>
         <Item.Split />
-        <Item hover tip="删除">
-          <Icon type="icon-delete" onClick={this.handleDelete} />
+        <Item hover tip="删除选中行" onClick={this.handleRemoveRow}>
+          <Icon type="icon-remove-row" />
+        </Item>
+        <Item hover tip="增加行" onClick={this.handleInsertRow}>
+          <Icon type="icon-insert-row" />
+        </Item>
+        <Item.Split />
+        <Item hover tip="删除" onClick={this.handleDelete}>
+          <Icon type="icon-delete" />
         </Item>
       </>
     );
