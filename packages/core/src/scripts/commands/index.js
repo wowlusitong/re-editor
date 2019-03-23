@@ -4,6 +4,7 @@ import { hasBlock } from '~/utils/utils';
 
 import image from './image';
 import table from './table';
+import code from './code';
 
 function marks() {
   return Object.keys(basicMarks).reduce((commands, type) => {
@@ -44,7 +45,8 @@ const commands = {
   redo: editor => editor.redo(),
   'image-local': () => document.querySelector('#re-editor-image-input').click(),
   image,
-  table
+  table,
+  code
 };
 
 export default function(editor) {

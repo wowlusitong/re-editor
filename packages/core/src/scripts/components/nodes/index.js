@@ -15,6 +15,7 @@ export const basicNodes = {
   tr: { name: 'tr' },
   th: { name: 'th' },
   td: { name: 'td' },
+  code: { name: 'code' },
   listitem: { name: 'li' },
   'align-right': {
     name: 'div',

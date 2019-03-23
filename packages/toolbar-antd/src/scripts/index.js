@@ -72,6 +72,7 @@ export default class Toolbar extends React.Component {
               title="图片（支持快捷键粘贴）"
             />
             <Button type="table" title="表格" />
+            <Button type="code" title="代码" />
           </Button.Group>
           <Button.Group>
             <Button type="undo" title="撤销" />

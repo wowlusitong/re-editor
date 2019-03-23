@@ -1,0 +1,15 @@
+.keyword {
+  color: #008dfe;
+}
+.function {
+  color: #f82026;
+}
+.punctuation {
+  color: #999999;
+}
+.string {
+  color: #0b8235;
+}
+.comment {
+  opacity: 0.3;
+}

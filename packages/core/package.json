@@ -24,6 +24,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "immutable": "3.8.1",
+    "prismjs": "^1.15.0",
     "rc-tooltip": "^3.7.3",
     "recompose": "^0.30.0",
     "slate": "^0.44.12",

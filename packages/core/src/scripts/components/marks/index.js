@@ -1,4 +1,5 @@
 import { generateElementComponents } from '~/utils/utils';
+import code from './code';
 
 export const basicMarks = {
   bold: { name: 'strong' },
@@ -11,5 +12,6 @@ export const basicMarks = {
 };
 
 export default {
-  ...generateElementComponents(basicMarks)
+  ...generateElementComponents(basicMarks),
+  ...generateElementComponents(code)
 };

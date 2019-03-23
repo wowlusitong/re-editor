@@ -1,7 +1,8 @@
 import React from 'react';
-import { Value } from 'slate';
+import { Value, Decoration } from 'slate';
 import { Editor, getEventTransfer } from 'slate-react';
 import { Map } from 'immutable';
+import Prism from 'prismjs';
 
 import nodes from '~/components/nodes';
 import marks from '~/components/marks';
@@ -77,6 +78,56 @@ export default class ReEditor extends React.Component {
     return next();
   };
 
+  decorateNode = (node, editor, next) => {
+    if (node.type !== 'code') {
+      return next();
+    }
+    const texts = node.getTexts().toArray();
+    const string = texts.map(t => t.text).join('\n');
+    const grammar = Prism.languages['javascript'];
+    const tokens = Prism.tokenize(string, grammar).filter(
+      token => typeof token === 'object'
+    );
+    const decorations = [];
+    let text = texts[0];
+    let startOffset = 0;
+    let endOffset = 0;
+
+    tokens.forEach(token => {
+      const index = texts.findIndex(text => text.text.includes(token.content));
+      if (index < 0) {
+        return;
+      }
+      text = texts[index];
+      if (texts[index].text === token.content) {
+        startOffset = 0;
+        endOffset = text.text.length;
+      } else {
+        startOffset = text.text.indexOf(token.content);
+        endOffset = startOffset + token.content.length;
+      }
+      if (endOffset + 1 === text.text.length) {
+        texts.splice(index, 1);
+      }
+      decorations.push(
+        new Decoration({
+          anchor: {
+            key: text.key,
+            offset: startOffset
+          },
+          focus: {
+            key: text.key,
+            offset: endOffset
+          },
+          mark: {
+            type: token.type
+          }
+        })
+      );
+    });
+    return decorations;
+  };
+
   render() {
     const { placeholder, autoFocus, className } = this.props;
     const { value, data } = this.state;
@@ -90,6 +141,7 @@ export default class ReEditor extends React.Component {
           onChange={this.handleChange}
           renderMark={this.renderMark}
           renderNode={this.renderNode}
+          decorateNode={this.decorateNode}
           ref={this.editor}
           autoFocus={autoFocus}
           placeholder={placeholder}
