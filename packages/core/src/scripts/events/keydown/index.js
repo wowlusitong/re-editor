@@ -1,5 +1,6 @@
 import space from './space';
 import Backspace from './Backspace';
+import Enter from './Enter';
 
 export function getKeyDownType(event) {
   return (
@@ -19,5 +20,6 @@ const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].reduce((nodes, v) => {
 export default {
   space,
   Backspace,
+  Enter,
   ...headings
 };
