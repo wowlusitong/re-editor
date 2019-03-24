@@ -31,14 +31,14 @@ export default class ReImage extends React.Component {
   render() {
     const { node, children } = this.props;
     return (
-      <span>
+      <>
         <img
           src={node.data.get('src')}
           width={node.data.get('width')}
           height={node.data.get('height')}
         />
         {children}
-      </span>
+      </>
     );
   }
 }

@@ -15,3 +15,10 @@ blockquote {
   color: #6a737d;
   padding: 0 1em;
 }
+
+.node-wrapper-Image {
+  img {
+    max-width: 100%;
+  }
+  display: inline;
+}
