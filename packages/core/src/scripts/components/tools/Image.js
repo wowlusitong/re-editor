@@ -62,10 +62,18 @@ export default class Image extends React.Component {
     return (
       <>
         <Item tip="设置宽度">
-          <SlateInput value={width} onChange={this.handleChangeWidth} />
+          <SlateInput
+            type="number"
+            value={width}
+            onChange={this.handleChangeWidth}
+          />
         </Item>
         <Item tip="设置高度">
-          <SlateInput value={height} onChange={this.handleChangeHeight} />
+          <SlateInput
+            type="number"
+            value={height}
+            onChange={this.handleChangeHeight}
+          />
         </Item>
         <Item.Split />
         <Item hover tip="替换" onClick={this.handleReplace}>

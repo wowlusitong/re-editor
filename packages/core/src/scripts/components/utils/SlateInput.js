@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class SmallInput extends React.Component {
+export default class SlateInput extends React.Component {
   constructor(props) {
     super(props);
 
@@ -30,12 +30,12 @@ export default class SmallInput extends React.Component {
   }
 
   render() {
-    const { value } = this.props;
+    const { value, type } = this.props;
 
     return (
       <input
         className="slate-input"
-        type="text"
+        type={type}
         value={value}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
@@ -45,3 +45,7 @@ export default class SmallInput extends React.Component {
     );
   }
 }
+
+SlateInput.defaultProps = {
+  type: 'text'
+};
