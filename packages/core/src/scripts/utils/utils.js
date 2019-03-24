@@ -64,3 +64,29 @@ export function getContent(token) {
     return token.content.map(getContent).join('');
   }
 }
+
+export function getMarkdownType(chars) {
+  switch (chars) {
+    case '-':
+    case '•':
+      return 'unorderedlist';
+    case '>':
+      return 'blockquote';
+    case '#':
+      return 'h1';
+    case '##':
+      return 'h2';
+    case '###':
+      return 'h3';
+    case '####':
+      return 'h4';
+    case '#####':
+      return 'h5';
+    case '######':
+      return 'h6';
+    case /^\d+\./.test(chars) && chars:
+      return 'orderedlist';
+    default:
+      return null;
+  }
+}

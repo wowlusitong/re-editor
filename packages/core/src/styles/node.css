@@ -10,3 +10,8 @@
 .align-justify {
   text-align: justify;
 }
+blockquote {
+  border-left: 3px solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}

@@ -9,6 +9,7 @@ import marks from '~/components/marks';
 import { initialValue, getContent } from '~/utils/utils';
 import ImageUploader from '~/components/utils/ImageUploader';
 import paster, { getPasteType } from '~/events/paste';
+import keydownFirer, { getKeyDownType } from '~/events/keydown';
 import command from '~/commands';
 import NodeWrapper from '~/components/wrappers/NodeWrapper';
 import DataContext from '~/components/contexts/Data';
@@ -52,6 +53,24 @@ export default class ReEditor extends React.Component {
     next();
   };
 
+  handleKeyDown = (event, editor, next) => {
+    const { data } = this.state;
+    const type = getKeyDownType(event);
+    const keydown = keydownFirer[type];
+    if (keydown) {
+      return keydown(
+        {
+          editor,
+          data,
+          onChangeData: this.onChangeData,
+          next
+        },
+        event
+      );
+    }
+    next();
+  };
+
   renderMark = (props, editor, next) => {
     const { children, mark, attributes } = props;
     const Component = marks[mark.type];
@@ -87,9 +106,6 @@ export default class ReEditor extends React.Component {
     const texts = node.getTexts().toArray();
     const string = texts.map(t => t.text).join('\n');
     const grammar = Prism.languages[language];
-    // const tokens = Prism.tokenize(string, grammar).filter(
-    //   token => typeof token === 'object'
-    // );
 
     const tokens = Prism.tokenize(string, grammar)
       .filter(token => token !== '\n')
@@ -170,6 +186,7 @@ export default class ReEditor extends React.Component {
           placeholder={placeholder}
           className={className}
           onPaste={this.handlePaste}
+          onKeyDown={this.handleKeyDown}
         />
         <ImageUploader insertImage={this.handleInsertImage} />
       </DataContext.Provider>
