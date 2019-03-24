@@ -51,7 +51,7 @@ import 're-editor/lib/styles/index.css'
 $ npm install @re-editor/core
 ```
 ### 创建工具条
-可以用任何方式创建编辑器工具条，需要将编辑器的实例传给工具条，可参考 [re-editor](https://github.com/wowlusitong/re-editor/tree/master/packages/re-editor) 和 [@re-editor/toolbar-antd](https://github.com/wowlusitong/re-editor/tree/master/packages/toolbar-antd)的实现，详情查看API文档(这部分文档还没写完，会在一周内补全😂)
+可以用任何方式创建编辑器工具条，需要将编辑器的实例传给工具条，可参考 [re-editor](https://github.com/wowlusitong/re-editor/tree/master/packages/re-editor) 和 [@re-editor/toolbar-antd](https://github.com/wowlusitong/re-editor/tree/master/packages/toolbar-antd)的实现，详情查看API文档(这部分文档还没写完，会在近期补全😂)
 
 例如实现一个加粗功能:
 ```js
