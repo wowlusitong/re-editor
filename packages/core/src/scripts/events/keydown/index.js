@@ -1,6 +1,7 @@
 import space from './space';
 import Backspace from './Backspace';
 import Enter from './Enter';
+import Tab from './Tab';
 
 export function getKeyDownType(event) {
   return (
@@ -13,5 +14,6 @@ export function getKeyDownType(event) {
 export default {
   space,
   Backspace,
-  Enter
+  Enter,
+  Tab
 };
