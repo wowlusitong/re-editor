@@ -10,16 +10,8 @@ export function getKeyDownType(event) {
   );
 }
 
-const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].reduce((nodes, v) => {
-  nodes[v] = (change, event) => {
-    event.preventDefault();
-  };
-  return nodes;
-}, {});
-
 export default {
   space,
   Backspace,
-  Enter,
-  ...headings
+  Enter
 };
