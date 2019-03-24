@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/wowlusitong/re-editor/compare/v0.0.3...v0.4.0) (2019-03-24)
+
+
+### Bug Fixes
+
+* **core:** 修复代码高亮解析错误 ([38c7b6d](https://github.com/wowlusitong/re-editor/commit/38c7b6d))
+* **core:** 修复表格工具条点击事件不灵敏 ([ebd5a88](https://github.com/wowlusitong/re-editor/commit/ebd5a88))
+
+
+### Features
+
+* **core:** tab按键操作改为新建两个空格 ([ba93e09](https://github.com/wowlusitong/re-editor/commit/ba93e09))
+* **core:** 代码高亮可以跳出 ([b70884e](https://github.com/wowlusitong/re-editor/commit/b70884e))
+* **core:** 代码高亮增加独立工具栏 ([55002b3](https://github.com/wowlusitong/re-editor/commit/55002b3))
+* **core:** 使回车操作新建一行将不会继承heading样式 ([abccbfa](https://github.com/wowlusitong/re-editor/commit/abccbfa))
+* **core:** 在空列表内按回车将取消列表样式 ([c96da28](https://github.com/wowlusitong/re-editor/commit/c96da28))
+* **core:** 增加markdown支持 ([5c2d8f5](https://github.com/wowlusitong/re-editor/commit/5c2d8f5))
+* **core:** 增加代码高亮支持 ([521a807](https://github.com/wowlusitong/re-editor/commit/521a807))
+* **core:** 增加表格功能 ([1aee824](https://github.com/wowlusitong/re-editor/commit/1aee824))
+* **core:** 标题样式下，在行首按删除键将清空样式而不是退到前一行 ([96fd029](https://github.com/wowlusitong/re-editor/commit/96fd029))
+
+
+
+
+
 # [0.3.0](https://github.com/wowlusitong/re-editor/compare/v0.0.3...v0.3.0) (2019-03-24)
 
 
