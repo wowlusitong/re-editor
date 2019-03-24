@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/wowlusitong/re-editor/compare/v0.4.1...v0.4.2) (2019-03-24)
+
+
+### Features
+
+* **core:** 图片调整宽高input使用number ([9430f69](https://github.com/wowlusitong/re-editor/commit/9430f69))
+* **core:** 新增props: spellCheck readOnly ([3bc9772](https://github.com/wowlusitong/re-editor/commit/3bc9772))
+* **core:** 设置图片最大宽度 ([174c29a](https://github.com/wowlusitong/re-editor/commit/174c29a))
+
+
+
+
+
 ## [0.4.1](https://github.com/wowlusitong/re-editor/compare/v0.4.0...v0.4.1) (2019-03-24)
 
 
