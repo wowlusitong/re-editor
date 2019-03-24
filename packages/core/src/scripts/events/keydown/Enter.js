@@ -7,5 +7,12 @@ export default function({ editor, next }) {
     editor.insertBlock('paragraph');
     return;
   }
+  if (focusBlock.type === 'listitem' && focusBlock.text === '') {
+    editor
+      .setBlocks('paragraph')
+      .unwrapBlock('unorderedlist')
+      .unwrapBlock('orderedlist');
+    return;
+  }
   next();
 }
