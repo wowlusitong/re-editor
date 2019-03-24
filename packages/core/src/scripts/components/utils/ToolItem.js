@@ -15,7 +15,7 @@ export default class ToolItem extends React.Component {
     return (
       <Tooltip
         placement="top"
-        mouseEnterDelay="0.2"
+        mouseEnterDelay={0.2}
         overlay={() => <div>{tip}</div>}
       >
         <div

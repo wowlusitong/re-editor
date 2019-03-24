@@ -29,6 +29,7 @@
   .function-name,
   .constant,
   .symbol,
+  .function,
   .deleted {
     color: #ed5c65;
   }
@@ -54,7 +55,6 @@
   .atrule,
   .attr-value,
   .keyword,
-  .function,
   .class-name {
     color: #008dfe;
   }

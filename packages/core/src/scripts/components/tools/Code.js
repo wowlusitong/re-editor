@@ -42,11 +42,7 @@ export default class Code extends React.Component {
     const { language } = this.props;
     return (
       <>
-        <select
-          contentEditor={true}
-          onChange={this.handleChange}
-          value={language}
-        >
+        <select onChange={this.handleChange} value={language}>
           <option>javascript</option>
           <option>html</option>
           <option>css</option>

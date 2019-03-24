@@ -12,9 +12,12 @@
     }
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true,
+    "es6": true
   },
   "rules": {
+    "no-undef": "error",
     "no-unused-vars": ["error", { "args": "after-used", "ignoreRestSiblings": true }],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error"

@@ -82,42 +82,57 @@ export default class ReEditor extends React.Component {
     if (node.type !== 'code') {
       return next();
     }
+
     const language = node.data.get('language', 'javascript');
     const texts = node.getTexts().toArray();
     const string = texts.map(t => t.text).join('\n');
     const grammar = Prism.languages[language];
-    const tokens = Prism.tokenize(string, grammar).filter(
-      token => typeof token === 'object'
-    );
+    // const tokens = Prism.tokenize(string, grammar).filter(
+    //   token => typeof token === 'object'
+    // );
+
+    const tokens = Prism.tokenize(string, grammar)
+      .filter(token => token !== '\n')
+      .map(token => {
+        if (typeof token === 'string') {
+          return new Prism.Token('span', token.replace('\n', ''));
+        }
+        return token;
+      });
+
     const decorations = [];
-    let text = texts[0];
+    let textNode = texts[0];
+    let text = textNode.text;
     let startOffset = 0;
     let endOffset = 0;
+    let isNewLine = true;
     tokens.forEach(token => {
       const content = getContent(token);
       const index = texts.findIndex(text => text.text.includes(content));
       if (index < 0) {
         return;
       }
-      text = texts[index];
-      if (texts[index].text === content) {
-        startOffset = 0;
-        endOffset = text.text.length;
-      } else {
-        startOffset = text.text.indexOf(content);
-        endOffset = startOffset + content.length;
+      textNode = texts[index];
+      if (isNewLine) {
+        text = textNode.text;
       }
-      if (endOffset + 1 === text.text.length) {
-        texts.splice(index, 1);
+      if (textNode.text === content) {
+        startOffset = 0;
+        endOffset = text.length;
+      } else {
+        startOffset = endOffset + text.indexOf(content);
+        endOffset = startOffset + content.length;
+        text = textNode.text.substr(endOffset);
+        isNewLine = false;
       }
       decorations.push(
-        new Decoration({
+        Decoration.fromJSON({
           anchor: {
-            key: text.key,
+            key: textNode.key,
             offset: startOffset
           },
           focus: {
-            key: text.key,
+            key: textNode.key,
             offset: endOffset
           },
           mark: {
@@ -125,6 +140,13 @@ export default class ReEditor extends React.Component {
           }
         })
       );
+
+      if (endOffset >= textNode.text.length) {
+        isNewLine = true;
+        startOffset = 0;
+        endOffset = 0;
+        texts.splice(index, 1);
+      }
     });
     return decorations;
   };
