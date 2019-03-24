@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/wowlusitong/re-editor/compare/v0.4.0...v0.4.1) (2019-03-24)
+
+
+### Features
+
+* **korok:** 空列表可以使用delete删除列表样式 ([f5aa3d2](https://github.com/wowlusitong/re-editor/commit/f5aa3d2))
+
+
+
+
+
 # [0.4.0](https://github.com/wowlusitong/re-editor/compare/v0.0.3...v0.4.0) (2019-03-24)
 
 
