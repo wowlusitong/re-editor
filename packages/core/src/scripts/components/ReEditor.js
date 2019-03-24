@@ -168,7 +168,13 @@ export default class ReEditor extends React.Component {
   };
 
   render() {
-    const { placeholder, autoFocus, className } = this.props;
+    const {
+      placeholder,
+      autoFocus,
+      className,
+      spellCheck,
+      readOnly
+    } = this.props;
     const { value, data } = this.state;
 
     return (
@@ -187,6 +193,8 @@ export default class ReEditor extends React.Component {
           className={className}
           onPaste={this.handlePaste}
           onKeyDown={this.handleKeyDown}
+          spellCheck={spellCheck}
+          readOnly={readOnly}
         />
         <ImageUploader insertImage={this.handleInsertImage} />
       </DataContext.Provider>
@@ -195,5 +203,7 @@ export default class ReEditor extends React.Component {
 }
 
 ReEditor.defaultProps = {
-  className: 're-editor'
+  className: 're-editor',
+  spellCheck: false,
+  readOnly: false
 };
