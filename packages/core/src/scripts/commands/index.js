@@ -28,7 +28,7 @@ function list() {
   return ['unorderedlist', 'orderedlist'].reduce((commands, type) => {
     commands[type] = editor => {
       if (hasBlock(editor.value, 'listitem')) {
-        editor.setBlocks('paragraph-block').unwrapBlock(type);
+        editor.setBlocks('paragraph').unwrapBlock(type);
       } else {
         editor.setBlocks('listitem').wrapBlock(type);
       }
