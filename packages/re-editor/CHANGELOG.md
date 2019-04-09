@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/wowlusitong/re-editor/compare/v0.4.2...v0.4.3) (2019-04-09)
+
+
+### Bug Fixes
+
+* **core:** 修复readOnly模式下可以编辑表格等组件的问题 ([f9b3808](https://github.com/wowlusitong/re-editor/commit/f9b3808))
+
+
+
+
+
 ## [0.4.2](https://github.com/wowlusitong/re-editor/compare/v0.4.1...v0.4.2) (2019-03-24)
 
 **Note:** Version bump only for package re-editor
