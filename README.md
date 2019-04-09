@@ -43,6 +43,7 @@ import 're-editor/lib/styles/index.css'
 | value | 编辑器的值 | [object](https://github.com/wowlusitong/re-editor/blob/master/packages/core/src/scripts/utils/utils.js#L4-L19)
 | onChange| 编辑器更改内容的回调|(value: [Value](https://docs.slatejs.org/slate-core/value)) => void
 | placeholder | 占位文本 | string
+| readOnly | 只读模式 | boolean
 
 ## 自定义
 编辑器拆分为两个部分，内容编辑区域 和 工具条，下面介绍如何自定义工具条
