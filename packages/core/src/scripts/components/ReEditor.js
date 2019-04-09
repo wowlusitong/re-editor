@@ -82,12 +82,13 @@ export default class ReEditor extends React.Component {
 
   renderNode = (props, editor, next) => {
     const { children, node, attributes, ...rest } = props;
+    const { readOnly } = this.props;
     const type = node.type;
 
     const Component = nodes[type];
     if (Component) {
       return (
-        <NodeWrapper editor={editor} node={node} {...rest}>
+        <NodeWrapper readOnly={readOnly} editor={editor} node={node} {...rest}>
           <Component node={node} editor={editor} {...attributes}>
             {children}
           </Component>

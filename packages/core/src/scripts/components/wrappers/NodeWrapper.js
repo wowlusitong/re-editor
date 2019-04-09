@@ -11,10 +11,12 @@ import { isIgnoreWrapper } from '~/utils/utils';
   onChangeData
 }))
 @withProps(props => {
-  const { data, node, isSelected } = props;
+  const { data, node, isSelected, readOnly } = props;
   return {
     Tool: tools[node.type],
-    isSelected: data.getIn([node.key, 'isSelected'], isSelected)
+    isSelected: readOnly
+      ? false
+      : data.getIn([node.key, 'isSelected'], isSelected)
   };
 })
 export default class NodeWrapper extends React.Component {

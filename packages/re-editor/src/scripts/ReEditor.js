@@ -24,7 +24,7 @@ export default class ReEditor extends React.Component {
   };
 
   render() {
-    const { placeholder } = this.props;
+    const { placeholder, readOnly } = this.props;
     const { value } = this.state;
 
     return (
@@ -38,8 +38,13 @@ export default class ReEditor extends React.Component {
           ref={this.editor}
           value={value}
           onChange={this.handleChange}
+          readOnly={readOnly}
         />
       </div>
     );
   }
 }
+ReEditor.defaultProps = {
+  placeholder: '请输入内容',
+  readOnly: false
+};
