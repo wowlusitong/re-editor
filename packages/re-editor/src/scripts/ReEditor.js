@@ -24,7 +24,7 @@ export default class ReEditor extends React.Component {
   };
 
   render() {
-    const { placeholder, readOnly } = this.props;
+    const { placeholder, readOnly, onImageUpload } = this.props;
     const { value } = this.state;
 
     return (
@@ -39,6 +39,7 @@ export default class ReEditor extends React.Component {
           value={value}
           onChange={this.handleChange}
           readOnly={readOnly}
+          onImageUpload={onImageUpload}
         />
       </div>
     );

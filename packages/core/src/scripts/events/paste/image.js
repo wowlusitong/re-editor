@@ -1,11 +1,16 @@
 import command from '~/commands';
 
-export default function({ transfer, editor }) {
+export default async function({ transfer, editor, onImageUpload }) {
   const { files } = transfer;
   const file = files[0];
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.addEventListener('load', () => {
-    command(editor)('image', reader.result);
-  });
+  if (onImageUpload) {
+    const url = await onImageUpload(file);
+    command(editor)('image', url);
+  } else {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.addEventListener('load', () => {
+      command(editor)('image', reader.result);
+    });
+  }
 }

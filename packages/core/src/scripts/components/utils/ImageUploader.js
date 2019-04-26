@@ -8,16 +8,21 @@ import DataContext from '~/components/contexts/Data';
   onChangeData
 }))
 export default class ImageUploader extends React.Component {
-  handleFileUpload = event => {
-    const { insertImage } = this.props;
+  handleFileUpload = async event => {
+    const { insertImage, onImageUpload } = this.props;
     const { files } = event.target;
     const file = files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.addEventListener('load', () => {
-        insertImage(reader.result);
-      });
+      if (onImageUpload) {
+        const url = await onImageUpload(file);
+        insertImage(url);
+      } else {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.addEventListener('load', () => {
+          insertImage(reader.result);
+        });
+      }
     }
   };
 

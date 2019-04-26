@@ -4,6 +4,7 @@ const presets = [
 ];
 
 const plugins = [
+  ["@babel/plugin-transform-runtime", { "regenerator": true }],
   "@babel/plugin-syntax-dynamic-import",
   "@babel/plugin-proposal-export-namespace-from",
   ["@babel/plugin-proposal-decorators", { "legacy": true }],

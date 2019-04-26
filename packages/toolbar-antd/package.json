@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.4.3",
     "@re-editor/core": "0.4.3",
     "antd": "^3.15.0"
   },

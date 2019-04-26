@@ -44,11 +44,12 @@ export default class ReEditor extends React.Component {
   };
 
   handlePaste = (event, editor, next) => {
+    const { onImageUpload } = this.props;
     const transfer = getEventTransfer(event);
     const type = getPasteType(transfer);
     const paste = paster[type];
     if (paste) {
-      return paste({ editor, transfer });
+      return paste({ editor, transfer, onImageUpload });
     }
     next();
   };
@@ -174,7 +175,8 @@ export default class ReEditor extends React.Component {
       autoFocus,
       className,
       spellCheck,
-      readOnly
+      readOnly,
+      onImageUpload
     } = this.props;
     const { value, data } = this.state;
 
@@ -197,7 +199,10 @@ export default class ReEditor extends React.Component {
           spellCheck={spellCheck}
           readOnly={readOnly}
         />
-        <ImageUploader insertImage={this.handleInsertImage} />
+        <ImageUploader
+          onImageUpload={onImageUpload}
+          insertImage={this.handleInsertImage}
+        />
       </DataContext.Provider>
     );
   }
