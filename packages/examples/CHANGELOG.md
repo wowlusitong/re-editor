@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/wowlusitong/re-editor/compare/v0.4.3...v0.5.0) (2019-04-26)
+
+
+### Features
+
+* **core:** 上传图片增加自定义支持 ([b72f062](https://github.com/wowlusitong/re-editor/commit/b72f062))
+
+
+
+
+
 ## [0.4.3](https://github.com/wowlusitong/re-editor/compare/v0.4.2...v0.4.3) (2019-04-09)
 
 **Note:** Version bump only for package @re-editor/examples
