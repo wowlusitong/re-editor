@@ -3,3 +3,4 @@ yarn-error.log
 lerna-debug.log
 lib
 dist
+.DS_Store
