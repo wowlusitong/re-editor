@@ -83,6 +83,11 @@ slate或draft并不是一个纯编辑器，它们更像是一个用于构建编�
 样式可以通过css自定义
 #### 每次保存数据量太大怎么办？
 使用增量更新，onChange回调的value是 [immutable](https://github.com/immutable-js/immutable-js)格式，可以使用[immutable-js-diff](https://github.com/intelie/immutable-js-diff#readme)等方法获取diff的内容进行增量更新
+#### 如何指定上传图片服务器
+图片默认保存为base64，如果需要将图片上传到指定服务器，可使用`onImageUpload`函数，
+(file: File) => Promise<url: string> [示例代码](https://github.com/wowlusitong/re-editor/blob/master/packages/examples/src/scripts/CustomUploadImageApp.js)
+
+
 
 
 # 功能
@@ -101,6 +106,7 @@ slate或draft并不是一个纯编辑器，它们更像是一个用于构建编�
 - `图片`
   - 设置大小
   - 从剪贴板复制
+  - 支持自定义上传图片服务器地址
 - `表格`
   - 增加行
   - 增加列
