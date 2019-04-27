@@ -25,6 +25,7 @@
     "@babel/plugin-transform-runtime": "^7.4.3",
     "classnames": "^2.2.6",
     "immutable": "3.8.1",
+    "is-hotkey": "^0.1.4",
     "prismjs": "^1.15.0",
     "rc-tooltip": "^3.7.3",
     "recompose": "^0.30.0",

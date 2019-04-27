@@ -90,3 +90,10 @@ export function getMarkdownType(chars) {
       return null;
   }
 }
+
+export function getForeFather(editor) {
+  const value = editor.value;
+  const nodes = value.document.nodes;
+  const focusKey = value.selection.focus.key;
+  return nodes.find(node => node.hasDescendant(focusKey));
+}
