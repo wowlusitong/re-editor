@@ -11,6 +11,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [0.5.1](https://github.com/wowlusitong/re-editor/compare/v0.5.0...v0.5.1) (2019-05-12)
+
+**Note:** Version bump only for package re-editor
+
+
+
+
+
 # [0.5.0](https://github.com/wowlusitong/re-editor/compare/v0.4.3...v0.5.0) (2019-04-26)
 
 
