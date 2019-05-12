@@ -4,6 +4,7 @@ import { Editor, getEventTransfer } from 'slate-react';
 import { Map } from 'immutable';
 import Prism from 'prismjs';
 
+import schema from '~/schema';
 import nodes from '~/components/nodes';
 import marks from '~/components/marks';
 import { initialValue, getContent } from '~/utils/utils';
@@ -198,6 +199,7 @@ export default class ReEditor extends React.Component {
           onKeyDown={this.handleKeyDown}
           spellCheck={spellCheck}
           readOnly={readOnly}
+          schema={schema}
         />
         <ImageUploader
           onImageUpload={onImageUpload}
