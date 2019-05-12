@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/wowlusitong/re-editor/compare/v0.5.0...v0.5.1) (2019-05-12)
+
+
+### Bug Fixes
+
+* **core:** 修复光标无法移动到图片上 ([b218b99](https://github.com/wowlusitong/re-editor/commit/b218b99))
+* **core:** 修复点击图片光标位置错误的问题 ([a79a624](https://github.com/wowlusitong/re-editor/commit/a79a624))
+
+
+### Features
+
+* **core:** 代码片段内可以使用cmd + enter跳出 ([db37417](https://github.com/wowlusitong/re-editor/commit/db37417))
+
+
+
+
+
 # [0.5.0](https://github.com/wowlusitong/re-editor/compare/v0.4.3...v0.5.0) (2019-04-26)
 
 
