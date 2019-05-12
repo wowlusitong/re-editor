@@ -21,11 +21,18 @@ import { isIgnoreWrapper } from '~/utils/utils';
 })
 export default class NodeWrapper extends React.Component {
   handleClick = event => {
-    const { node, onChangeData } = this.props;
+    const { node, onChangeData, editor } = this.props;
     const toolbar = document.querySelector('.tool-wrapper');
     const isInPlugin = toolbar && toolbar.contains(event.target);
     if (!isInPlugin) {
-      onChangeData(d => d.setIn([node.key, 'isSelected'], true));
+      onChangeData(
+        d => d.setIn([node.key, 'isSelected'], true),
+        () => {
+          if (['Image'].includes(node.type)) {
+            editor.moveToRangeOfNode(node);
+          }
+        }
+      );
     }
   };
 
