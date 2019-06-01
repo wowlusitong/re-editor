@@ -1,9 +1,14 @@
 import React from 'react';
+import { fromRenderProps } from 'recompose';
 
+import DataContext from '~/components/contexts/Data';
 import Icon from '~/components/utils/Icon';
 import Item from '~/components/utils/ToolItem';
 import Table from '~/utils/table';
 
+@fromRenderProps(DataContext.Consumer, ({ onChangeData }) => ({
+  onChangeData
+}))
 export default class TableTool extends React.Component {
   handleDelete = event => {
     event.stopPropagation();
@@ -41,6 +46,16 @@ export default class TableTool extends React.Component {
     new Table(editor).insertColumn('left');
   };
 
+  handleJump = () => {
+    const { editor, node, onChangeData } = this.props;
+    onChangeData(
+      d => d.setIn([node.key, 'isSelected'], false),
+      () => {
+        new Table(editor).jump();
+      }
+    );
+  };
+
   render() {
     return (
       <>
@@ -66,6 +81,9 @@ export default class TableTool extends React.Component {
         <Item.Split />
         <Item hover tip="删除" onClick={this.handleDelete}>
           <Icon type="icon-delete" />
+        </Item>
+        <Item hover tip="跳出" onClick={this.handleJump}>
+          <Icon type="icon-enter" />
         </Item>
       </>
     );

@@ -24,7 +24,7 @@ export default class Code extends React.Component {
     editor.removeNodeByKey(node.key);
   };
 
-  handleSuccess = () => {
+  handleJump = () => {
     const { editor, node, onChangeData } = this.props;
     onChangeData(
       d => d.setIn([node.key, 'isSelected'], false),
@@ -51,7 +51,7 @@ export default class Code extends React.Component {
           <Icon type="icon-delete" />
         </Item>
         <Item.Split />
-        <Item hover tip="跳出" onClick={this.handleSuccess}>
+        <Item hover tip="跳出" onClick={this.handleJump}>
           <Icon type="icon-enter" />
         </Item>
       </>

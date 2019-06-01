@@ -53,4 +53,14 @@ export default class Table {
       }
     );
   }
+
+  jump() {
+    this.editor
+      .moveToRangeOfNode(this.table)
+      .moveToEnd()
+      .insertBlock('paragraph')
+      .unwrapBlock()
+      .unwrapBlock()
+      .unwrapBlock();
+  }
 }
