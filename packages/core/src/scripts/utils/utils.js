@@ -97,3 +97,7 @@ export function getForeFather(editor) {
   const focusKey = value.selection.focus.key;
   return nodes.find(node => node.hasDescendant(focusKey));
 }
+
+export function getModName() {
+  return window.navigator.platform.includes('Mac') ? 'Cmd' : 'Ctrl';
+}

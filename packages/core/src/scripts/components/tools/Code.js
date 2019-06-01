@@ -5,6 +5,7 @@ import DataContext from '~/components/contexts/Data';
 import Icon from '~/components/utils/Icon';
 import Item from '~/components/utils/ToolItem';
 import { setData } from '~/utils/utils';
+import { getModName } from '~/utils/utils';
 
 @fromRenderProps(DataContext.Consumer, ({ data, onChangeData }) => ({
   data,
@@ -51,7 +52,11 @@ export default class Code extends React.Component {
           <Icon type="icon-delete" />
         </Item>
         <Item.Split />
-        <Item hover tip="跳出" onClick={this.handleJump}>
+        <Item
+          hover
+          tip={`跳出(${getModName()}+Enter)`}
+          onClick={this.handleJump}
+        >
           <Icon type="icon-enter" />
         </Item>
       </>

@@ -5,6 +5,7 @@ import DataContext from '~/components/contexts/Data';
 import Icon from '~/components/utils/Icon';
 import Item from '~/components/utils/ToolItem';
 import Table from '~/utils/table';
+import { getModName } from '~/utils/utils';
 
 @fromRenderProps(DataContext.Consumer, ({ onChangeData }) => ({
   onChangeData
@@ -82,7 +83,11 @@ export default class TableTool extends React.Component {
         <Item hover tip="删除" onClick={this.handleDelete}>
           <Icon type="icon-delete" />
         </Item>
-        <Item hover tip="跳出" onClick={this.handleJump}>
+        <Item
+          hover
+          tip={`跳出(${getModName()}+Enter)`}
+          onClick={this.handleJump}
+        >
           <Icon type="icon-enter" />
         </Item>
       </>
