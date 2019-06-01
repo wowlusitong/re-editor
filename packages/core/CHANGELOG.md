@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.3](https://github.com/wowlusitong/re-editor/compare/v0.5.2...v0.5.3) (2019-06-01)
+
+
+### Features
+
+* **core:** 增加跳出操作的快捷键提示 ([89acd7c](https://github.com/wowlusitong/re-editor/commit/89acd7c))
+* **core:** 表格增加跳出功能 ([1698a5e](https://github.com/wowlusitong/re-editor/commit/1698a5e))
+
+
+
+
+
 ## [0.5.2](https://github.com/wowlusitong/re-editor/compare/v0.5.1...v0.5.2) (2019-06-01)
 
 
