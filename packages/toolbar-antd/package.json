@@ -1,6 +1,6 @@
 {
   "name": "@re-editor/toolbar-antd",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "",
   "main": "lib/scripts/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.4.3",
-    "@re-editor/core": "0.5.1",
+    "@re-editor/core": "0.5.2",
     "antd": "^3.15.0"
   },
   "devDependencies": {
