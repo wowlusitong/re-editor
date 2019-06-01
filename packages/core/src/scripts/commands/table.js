@@ -1,4 +1,9 @@
+import Table from '~/utils/table';
+
 export default function(editor) {
+  if (new Table(editor).table) {
+    return;
+  }
   editor.insertBlock({
     object: 'block',
     type: 'table',

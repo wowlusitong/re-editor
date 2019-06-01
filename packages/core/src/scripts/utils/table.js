@@ -2,16 +2,18 @@ export default class Table {
   constructor(editor) {
     this.editor = editor;
     const focusKey = editor.value.selection.focus.key;
-    this.table = editor.value.document.nodes.find(node =>
-      node.hasDescendant(focusKey)
-    );
-    this.tbody = this.table.nodes.first();
-    this.trs = this.tbody.nodes;
-    this.focusTr = this.trs.find(tr => tr.hasDescendant(focusKey));
-    this.focusTrIndex = this.trs.findIndex(tr => tr.hasDescendant(focusKey));
-    this.focusTdIndex = this.focusTr.nodes.findIndex(td =>
-      td.hasDescendant(focusKey)
-    );
+    this.table = editor.value.document.nodes
+      .filter(node => node.type === 'table')
+      .find(node => node.hasDescendant(focusKey));
+    if (this.table) {
+      this.tbody = this.table.nodes.first();
+      this.trs = this.tbody.nodes;
+      this.focusTr = this.trs.find(tr => tr.hasDescendant(focusKey));
+      this.focusTrIndex = this.trs.findIndex(tr => tr.hasDescendant(focusKey));
+      this.focusTdIndex = this.focusTr.nodes.findIndex(td =>
+        td.hasDescendant(focusKey)
+      );
+    }
   }
 
   removeFocusColumn() {
