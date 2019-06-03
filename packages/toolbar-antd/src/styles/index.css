@@ -1,6 +1,13 @@
 .toolbar-antd-cotnainer {
+  position: relative;
   .ant-btn-group,
   .ant-select {
     margin-right: 10px;
   }
+}
+.table-picker {
+  position: absolute;
+  z-index: 200;
+  top: 25px;
+  left: 360px;
 }

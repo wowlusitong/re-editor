@@ -9,9 +9,13 @@ export default class Button extends React.Component {
   handleMouseDown = event => {
     event.preventDefault();
 
-    const { type } = this.props;
-    const { editor } = this.context;
-    command(editor)(type);
+    const { type, onMouseDown } = this.props;
+    if (onMouseDown) {
+      onMouseDown();
+    } else {
+      const { editor } = this.context;
+      command(editor)(type);
+    }
   };
 
   isActive = () => {

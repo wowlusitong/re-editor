@@ -12,7 +12,7 @@
       border-color: inherit;
     }
     td {
-      border: 1px solid #000;
+      border: 1px solid red;
       height: 34px;
       position: relative;
       border-color: inherit;
@@ -29,5 +29,31 @@
         display: block;
       }
     }
+  }
+}
+
+.table-picker {
+  background: #fff;
+
+  td {
+    width: 12px;
+    min-width: 12px;
+    height: 12px;
+    border: 1px solid #d9d9d9;
+    cursor: pointer;
+
+    &.active {
+      border-color: #008dfe;
+    }
+  }
+  .table-picker-footer {
+    background: #f2f5f6;
+    height: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #008dfe;
+    border-radius: 0px 0px 3px 3px;
   }
 }
