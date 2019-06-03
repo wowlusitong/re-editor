@@ -1,6 +1,6 @@
 {
   "name": "re-editor",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "",
   "main": "lib/scripts/index.js",
   "scripts": {
@@ -19,8 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.4.3",
-    "@re-editor/core": "0.5.3",
-    "@re-editor/toolbar-antd": "0.5.3"
+    "@re-editor/core": "0.5.4",
+    "@re-editor/toolbar-antd": "0.5.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/wowlusitong/re-editor/compare/v0.5.3...v0.5.4) (2019-06-03)
+
+
+### Features
+
+* **core:** 增加表格选择器 ([9e6d2bf](https://github.com/wowlusitong/re-editor/commit/9e6d2bf))
+
+
+
+
+
 ## [0.5.3](https://github.com/wowlusitong/re-editor/compare/v0.5.2...v0.5.3) (2019-06-01)
 
 **Note:** Version bump only for package @re-editor/toolbar-antd
