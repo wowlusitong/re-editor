@@ -26,13 +26,13 @@ export default class TablePicker extends React.Component {
       <div className={classNames('table-picker', { [className]: className })}>
         <table>
           <tbody>
-            {Array.from({ length: this.props.column }).map((_, i) => (
+            {Array.from({ length: this.props.row }).map((_, i) => (
               <tr key={i}>
-                {Array.from({ length: this.props.row }).map((_, j) => (
+                {Array.from({ length: this.props.column }).map((_, j) => (
                   <td
                     key={j}
-                    className={classNames({ active: j < row && i < column })}
-                    onMouseOver={this.handleMouseOver.bind(this, j + 1, i + 1)}
+                    className={classNames({ active: i < row && j < column })}
+                    onMouseOver={this.handleMouseOver.bind(this, i + 1, j + 1)}
                     onMouseDown={this.handleClick}
                   />
                 ))}
