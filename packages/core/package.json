@@ -29,7 +29,7 @@
     "prismjs": "^1.15.0",
     "rc-tooltip": "^3.7.3",
     "recompose": "^0.30.0",
-    "slate": "^0.44.12",
+    "slate": "^0.47.3",
     "slate-react": "^0.21.18"
   },
   "devDependencies": {
