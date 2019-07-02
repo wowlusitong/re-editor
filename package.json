@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "re-editor-packages",
+  "name": "@re-editor/core",
   "workspaces": [
     "packages/*"
   ],
