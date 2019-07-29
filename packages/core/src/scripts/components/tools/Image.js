@@ -17,14 +17,6 @@ import { setData } from '~/utils/utils';
   height: props.node.data.get('height')
 }))
 export default class Image extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      width: props.width,
-      height: props.height
-    };
-  }
-
   handleReplace = () => {
     const { editor, node } = this.props;
 
@@ -42,22 +34,16 @@ export default class Image extends React.Component {
 
   handleChangeWidth = width => {
     const { editor, node } = this.props;
-    this.setState({
-      width
-    });
     setData(editor, node, d => d.set('width', width));
   };
 
   handleChangeHeight = height => {
     const { editor, node } = this.props;
-    this.setState({
-      height
-    });
     setData(editor, node, d => d.set('height', height));
   };
 
   render() {
-    const { width, height } = this.state;
+    const { width, height } = this.props;
 
     return (
       <>

@@ -21,6 +21,8 @@ import { isIgnoreWrapper } from '~/utils/utils';
 })
 export default class NodeWrapper extends React.Component {
   handleClick = event => {
+    event.stopPropagation();
+
     const { node, onChangeData, editor } = this.props;
     const toolbar = document.querySelector('.tool-wrapper');
     const isInPlugin = toolbar && toolbar.contains(event.target);
