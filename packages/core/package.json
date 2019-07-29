@@ -26,6 +26,7 @@
     "classnames": "^2.2.6",
     "immutable": "3.8.1",
     "is-hotkey": "^0.1.4",
+    "lodash": "^4.17.15",
     "prismjs": "^1.15.0",
     "rc-tooltip": "^3.7.3",
     "recompose": "^0.30.0",

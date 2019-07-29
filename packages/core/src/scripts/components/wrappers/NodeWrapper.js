@@ -1,5 +1,6 @@
 import React from 'react';
 import { withProps, fromRenderProps } from 'recompose';
+import classNames from 'classnames';
 
 import DataContext from '~/components/contexts/Data';
 import ToolWrapper from '~/components/wrappers/ToolWrapper';
@@ -51,7 +52,9 @@ export default class NodeWrapper extends React.Component {
     return (
       <div
         onClick={this.handleClick}
-        className={`node-wrapper node-wrapper-${node.type}`}
+        className={classNames(`node-wrapper node-wrapper-${node.type}`, {
+          active: isSelected
+        })}
       >
         {children}
         {isSelected && Tool && (
