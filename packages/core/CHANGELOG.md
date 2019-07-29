@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/wowlusitong/re-editor/compare/v0.5.5...v0.5.6) (2019-07-29)
+
+
+### Bug Fixes
+
+* **core:** 修复图标宽高输入框无法获得焦点 ([2cc1d41](https://github.com/wowlusitong/re-editor/commit/2cc1d41))
+
+
+### Features
+
+* **core:** 增加图标拖拽改变大小的功能 ([f5c78e2](https://github.com/wowlusitong/re-editor/commit/f5c78e2))
+
+
+
+
+
 ## [0.5.5](https://github.com/wowlusitong/re-editor/compare/v0.5.4...v0.5.5) (2019-06-04)
 
 **Note:** Version bump only for package @re-editor/core
