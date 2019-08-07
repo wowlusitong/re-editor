@@ -8,6 +8,10 @@ import DataContext from '~/components/contexts/Data';
   onChangeData
 }))
 export default class ImageUploader extends React.Component {
+  handleClick = event => {
+    event.target.value = null;
+  };
+
   handleFileUpload = async event => {
     const { insertImage, onImageUpload } = this.props;
     const { files } = event.target;
@@ -33,6 +37,7 @@ export default class ImageUploader extends React.Component {
         type="file"
         accept="image/*"
         onChange={this.handleFileUpload}
+        onClick={this.handleClick}
         style={{ display: 'none' }}
       />
     );
