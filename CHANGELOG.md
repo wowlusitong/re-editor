@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.7](https://github.com/wowlusitong/re-editor/compare/v0.5.6...v0.5.7) (2019-08-07)
+
+
+### Bug Fixes
+
+* **core:** 修复上传图片无法再次选择相同的图片 ([782fcab](https://github.com/wowlusitong/re-editor/commit/782fcab))
+
+
+
+
+
 ## [0.5.6](https://github.com/wowlusitong/re-editor/compare/v0.5.5...v0.5.6) (2019-07-29)
 
 
