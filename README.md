@@ -1,13 +1,13 @@
 # re-editor &middot; [![Netlify Status](https://api.netlify.com/api/v1/badges/815fce6a-8e8e-4af9-b2c8-5c15dace9288/deploy-status)](https://app.netlify.com/sites/re-editor/deploys) [![CircleCI](https://circleci.com/gh/wowlusitong/re-editor.svg?style=svg)](https://circleci.com/gh/wowlusitong/re-editor) [![npm](https://img.shields.io/npm/v/re-editor.svg?style=popout)](https://www.npmjs.com/package/re-editor) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/wowlusitong/re-editor/blob/master/LICENSE)  [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-一个开箱即用的React富文本编辑器 🚀当然也可以定制化啦👏
+一个开箱即用的React富文本编辑器 🚀
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/3221051/54874637-513c2580-4e2a-11e9-94f1-3d9893e20066.png">
 
 
 
 - [使用方法](#使用方法)
-  - [开箱即用--提供 antd 风格工具栏](#开箱即用)
-  - [自定义--只引入编辑器核心，可定制工具栏](#自定义)
+  - [开箱即用-提供 antd 风格工具栏](#开箱即用)
+  - [自定义-只引入编辑器核心，可定制工具栏](#自定义)
 - [常见问题](#FAQ)
 - [支持的功能](#功能)
 
