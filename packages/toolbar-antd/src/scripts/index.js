@@ -8,7 +8,8 @@ import Context from '~/components/Context';
 
 export default class Toolbar extends React.Component {
   state = {
-    isShowTablePicker: false
+    isShowTablePicker: false,
+    isFullscreen: false
   };
 
   handleSelect = value => {
@@ -32,9 +33,23 @@ export default class Toolbar extends React.Component {
     });
   };
 
+  toggleFullscreen = () => {
+    this.setState({
+      isFullscreen: !this.state.isFullscreen
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener('fullscreen', this.toggleFullscreen);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('fullscreen', this.toggleFullscreen);
+  }
+
   render() {
     const { value, editor } = this.props;
-    const { isShowTablePicker } = this.state;
+    const { isShowTablePicker, isFullscreen } = this.state;
 
     return (
       <Context.Provider value={{ value, editor }}>
@@ -105,6 +120,11 @@ export default class Toolbar extends React.Component {
             <Button type="undo" title="撤销" />
             <Button type="redo" title="重做" />
           </Button.Group>
+          {isFullscreen ? (
+            <Button type="fullscreen" icon="quxiaoquanping" title="取消全屏" />
+          ) : (
+            <Button type="fullscreen" icon="fullScreen" title="全屏" />
+          )}
         </div>
       </Context.Provider>
     );

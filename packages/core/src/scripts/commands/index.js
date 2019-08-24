@@ -5,6 +5,7 @@ import { hasBlock } from '~/utils/utils';
 import image from './image';
 import table from './table';
 import code from './code';
+import fullscreen from './fullscreen';
 
 function marks() {
   return Object.keys(basicMarks).reduce((commands, type) => {
@@ -46,7 +47,8 @@ const commands = {
   'image-local': () => document.querySelector('#re-editor-image-input').click(),
   image,
   table,
-  code
+  code,
+  fullscreen
 };
 
 export default function(editor) {
