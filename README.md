@@ -19,10 +19,10 @@
 - [查看更多](#功能)
 
 # 使用方法
-编辑器为适应不同开发需求，提供两种使用方法
+编辑器为适应不同开发需求，提供下面两种使用方法
 
 ## 开箱即用
-re-editor是一个封装好的组件, 安装就可以使用, 它里面包含 [@re-editor/core](https://www.npmjs.com/package/@re-editor/core) 和 [@re-editor/toolbar-antd](https://www.npmjs.com/package/@re-editor/toolbar-antd), 工具条默认使用antd风格，如要使用其他工具条请参考下面自定义说明
+re-editor是一个封装好的组件, 安装就可以使用, 它里面包含 [@re-editor/core](https://www.npmjs.com/package/@re-editor/core) 和 [@re-editor/toolbar-antd](https://www.npmjs.com/package/@re-editor/toolbar-antd), 工具条默认使用antd风格，如果要使用其他工具条请参考下面自定义文档
 ### 安装依赖
 ```sh
 $ npm install re-editor
@@ -45,6 +45,35 @@ import 're-editor/lib/styles/index.css'
 | placeholder | 占位文本 | string
 | readOnly | 只读模式 | boolean
 | onImageUpload | 自定义图床 | (file: File) => Promise<url: string>
+| tools | 设置工具栏的显示内容 | Array<Array<string> | string>
+
+### 设置工具栏显示内容
+`tools props`支持数组形式，如果是二维数组会分组显示
+```js
+tools={['bold', 'italic', 'underline', 'strikethrough']}
+// 或者
+tools={[
+  ['bold', 'italic', 'underline', 'strikethrough'],
+  ['orderedlist', 'unorderedlist']
+]}
+```
+| 名称 | 功能 |
+| - | - |
+| bold | 粗体 |
+| italic | 斜体 |
+| underline | 下划线 |
+| strikethrough | 删除线 |
+| orderedlist | 有序列表 |
+| unorderedlist | 无序列表 |
+| heading | 标题 |
+| align | 对齐方式 |
+| image | 图片 |
+| table | 表格 |
+| code | 代码 |
+| undo | 撤销 |
+| redo | 重做 |
+| fullscreen | 全屏 |
+
 
 ## 自定义
 编辑器拆分为两个部分，内容编辑区域 和 工具条，下面介绍如何自定义工具条
@@ -121,5 +150,6 @@ slate或draft并不是一个纯编辑器，它们更像是一个用于构建编�
   - 引用: `> `
   - 有序列表: `- `
   - 无序列表: `1. `
+- 全屏编辑  
 
 其他功能持续增加中...

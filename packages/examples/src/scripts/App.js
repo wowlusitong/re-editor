@@ -22,6 +22,15 @@ export default class App extends React.Component {
           value={value}
           onChange={this.handleChange}
           placeholder="请输入内容"
+          tools={[
+            ['bold', 'italic', 'underline', 'strikethrough'],
+            ['orderedlist', 'unorderedlist'],
+            ['heading'],
+            ['align'],
+            ['image', 'table', 'code'],
+            ['undo', 'redo'],
+            ['fullscreen']
+          ]}
         />
       </div>
     );

@@ -4,10 +4,19 @@
   .ant-select {
     margin-right: 10px;
   }
+  & > button,
+  & > .ant-select,
+  & > .tool-table-container {
+    margin-right: 10px;
+  }
 }
 .table-picker {
   position: absolute;
   z-index: 200;
   top: 25px;
-  left: 360px;
+  left: 0px;
+}
+.tool-table-container {
+  display: inline;
+  position: relative;
 }

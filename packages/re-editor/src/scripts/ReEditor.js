@@ -24,13 +24,17 @@ export default class ReEditor extends React.Component {
   };
 
   render() {
-    const { placeholder, readOnly, onImageUpload } = this.props;
+    const { placeholder, readOnly, onImageUpload, tools } = this.props;
     const { value } = this.state;
 
     return (
       <div className="re-editor-container">
         {this.editor.current && (
-          <Toolbar value={value} editor={this.editor.current.editor.current} />
+          <Toolbar
+            value={value}
+            editor={this.editor.current.editor.current}
+            tools={tools}
+          />
         )}
         <Editor
           autoFocus
@@ -47,5 +51,14 @@ export default class ReEditor extends React.Component {
 }
 ReEditor.defaultProps = {
   placeholder: '请输入内容',
-  readOnly: false
+  readOnly: false,
+  tools: [
+    ['bold', 'italic', 'underline', 'strikethrough'],
+    ['orderedlist', 'unorderedlist'],
+    ['heading'],
+    ['align'],
+    ['image', 'table', 'code'],
+    ['undo', 'redo'],
+    ['fullscreen']
+  ]
 };

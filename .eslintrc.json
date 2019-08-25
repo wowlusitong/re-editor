@@ -20,7 +20,8 @@
     "no-undef": "error",
     "no-unused-vars": ["error", { "args": "after-used", "ignoreRestSiblings": true }],
     "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "import/namespace": [2, { "allowComputed": true }]
   },
   "settings": {
     "import/resolver": {
